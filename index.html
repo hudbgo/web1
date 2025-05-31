@@ -3,140 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MCO | Ciberseguridad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <title>Millan and Co | Ciberseguridad Profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0f0f0f;
-      color: #e5e5e5;
+      background-color: #ffffff;
+      color: #111;
+      line-height: 1.6;
     }
 
     header {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      background: url('img/fotobanner1.png') center/cover no-repeat;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      filter: brightness(0.3);
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
+      padding: 1.5rem 2rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-      padding: 2rem;
+      border-bottom: 1px solid #ddd;
     }
 
-    .hero-content h1 {
-      font-size: 4rem;
-      font-weight: 800;
-      color: #f3f4f6;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-      margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      color: #d1d5db;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-    }
-
-    nav {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      z-index: 2;
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
     }
 
     nav a {
-      color: #f3f4f6;
+      margin-left: 2rem;
       text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      color: #111;
+      font-weight: 500;
     }
 
     nav a:hover {
-      color: #a3e635;
+      color: #555;
     }
 
-    section {
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1rem auto;
+      color: #333;
+    }
+
+    .section {
       padding: 4rem 2rem;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    section h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
+    .section h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
-      color: #a3e635;
+      font-family: 'Playfair Display', serif;
     }
 
-    section p {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      line-height: 1.7;
+    .section p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .service-block {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background-color: #f7f7f7;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .service-block h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-block p {
+      font-size: 1rem;
+      color: #444;
     }
 
     footer {
-      background: #121212;
+      border-top: 1px solid #ddd;
       text-align: center;
       padding: 2rem;
-      font-size: 0.9rem;
-      color: #94a3b8;
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <div class="logo">Millan and Co</div>
     <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#temas">Temas</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <div class="hero-content">
-      <h1>MCO</h1>
-      <p>Tu espacio digital sobre ciberseguridad, privacidad y tecnología moderna.</p>
-    </div>
   </header>
 
-  <section id="inicio">
-    <h2>¿Qué es MCO?</h2>
-    <p>MCO es un proyecto personal centrado en la divulgación de contenidos sobre ciberseguridad. Aquí encontrarás recursos, ideas, consejos y herramientas útiles para entender y aplicar buenas prácticas de seguridad digital, tanto para usuarios como para profesionales.</p>
+  <section class="hero" id="inicio">
+    <h1>Confianza digital para tu negocio</h1>
+    <p>Planes directores de seguridad personalizados para pymes y particulares. Protección real, eficaz y continua.</p>
   </section>
 
-  <section id="temas">
-    <h2>Temas destacados</h2>
-    <p>Exploramos desde hacking ético y análisis de vulnerabilidades, hasta herramientas OSINT, defensa de redes, hardening de sistemas y mucho más. Todo explicado de forma clara, moderna y accesible.</p>
+  <section class="section" id="sobre-mi">
+    <h2>¿Quién soy?</h2>
+    <p>Soy un profesional autónomo especializado en ciberseguridad. Ayudo a personas y empresas a proteger sus activos críticos mediante análisis, auditorías, pruebas de penetración y propuestas de mejora física, lógica y organizativa. Trabajo bajo mi marca personal: <strong>Millan and Co</strong>.</p>
   </section>
 
-  <footer id="contacto">
-    <p>&copy; 2025 MCO - Proyecto personal sin ánimo de lucro. No se recopilan datos personales.</p>
+  <section class="section" id="servicios">
+    <h2>Servicios</h2>
+
+    <div class="service-block">
+      <h3>Plan Director de Seguridad</h3>
+      <p>Desarrollo de un plan estratégico que define las prioridades y acciones a seguir para proteger tus activos y sistemas. Este servicio incluye entrevistas, análisis detallado y entregables claros que te guiarán paso a paso en tu camino hacia una ciberseguridad madura y estructurada.</p>
+    </div>
+
+    <div class="service-block">
+      <h3>Auditoría de riesgos</h3>
+      <p>Realizo una evaluación profunda de tus entornos digitales y físicos para detectar vulnerabilidades, brechas de seguridad y malas prácticas. Identifico las amenazas relevantes y evalúo su impacto potencial, proporcionándote un mapa claro de riesgos y acciones de mitigación prioritarias.</p>
+    </div>
+
+    <div class="service-block">
+      <h3>Pruebas de penetración</h3>
+      <p>Simulo ataques reales para evaluar el nivel de resistencia de tus sistemas frente a amenazas externas e internas. Estas pruebas se adaptan a tu infraestructura y permiten descubrir fallos antes de que sean explotados. Recibirás un informe técnico y ejecutivo con todos los hallazgos y soluciones propuestas.</p>
+    </div>
+
+    <div class="service-block">
+      <h3>Mejoras integrales de seguridad</h3>
+      <p>Propuesta e implementación de mejoras tanto a nivel físico (controles de acceso, dispositivos), lógico (firewalls, configuraciones seguras) como de rutina operativa (concienciación, políticas internas). El objetivo es elevar tu nivel de seguridad a un estándar profesional y sostenible.</p>
+    </div>
+
+  </section>
+
+  <section class="section" id="proceso">
+    <h2>Mi proceso</h2>
+    <p>Mi enfoque está basado en la cercanía, análisis profundo y soluciones reales:</p>
+    <ul>
+      <li>1. Reunión inicial para conocer tus necesidades</li>
+      <li>2. Análisis de activos, entornos y sistemas</li>
+      <li>3. Pruebas de seguridad y detección de brechas</li>
+      <li>4. Presentación de informe con mejoras claras</li>
+      <li>5. Acompañamiento en la implementación</li>
+    </ul>
+  </section>
+
+  <section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Quieres proteger lo que más importa? Escríbeme sin compromiso:</p>
+    <p><strong>Email:</strong> millanandco@ejemplo.com</p>
+    <p><strong>WhatsApp:</strong> +34 600 000 000</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Millan and Co – Marca personal de ciberseguridad. Todos los derechos reservados.
   </footer>
 
 </body>
