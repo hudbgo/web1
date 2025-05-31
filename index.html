@@ -13,35 +13,42 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
+            background-color: #0e0e0e;
+            color: #e5e5e5;
             line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #0ea5e9, #2563eb);
-            padding: 2rem;
-            text-align: center;
-            color: white;
+            background: url('img/portada.png') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #d1d5db;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
         }
         header h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 1rem;
         }
         nav a {
             margin: 0 1rem;
-            color: white;
+            color: #d1d5db;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #a5f3fc;
+            color: #a3e635;
         }
         .hero {
             padding: 4rem 2rem;
             text-align: center;
-            background: #1e293b;
+            background-color: #121212;
         }
         .hero h2 {
             font-size: 2.5rem;
@@ -57,27 +64,28 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             padding: 4rem 2rem;
-            background: #0f172a;
+            background: #181818;
         }
         .service {
-            background-color: #1e293b;
+            background-color: #202020;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .service:hover {
             transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
         }
         .service h3 {
-            color: #38bdf8;
+            color: #a3e635;
             margin-bottom: 0.75rem;
         }
         .service p {
             color: #cbd5e1;
         }
         footer {
-            background: #1e293b;
+            background: #121212;
             text-align: center;
             padding: 2rem;
             font-size: 0.9rem;
@@ -89,7 +97,6 @@
     <header>
         <h1>MCO</h1>
         <nav>
-            <img src="img/fotobanner1.png" alt="Logo MCO" width="200">
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Temas</a>
             <a href="#contacto">Contacto</a>
@@ -98,7 +105,7 @@
 
     <section class="hero" id="inicio">
         <h2>Bienvenido a MCO</h2>
-        <p>Un espacio personal donde comparto sobre ciberseguridad, hacking ético y tecnología sin complicaciones.</p>
+        <p>Explora el mundo de la ciberseguridad con un enfoque moderno y minimalista. Este sitio personal está dedicado a compartir recursos, ideas y buenas prácticas de seguridad digital.</p>
     </section>
 
     <section class="services" id="servicios">
