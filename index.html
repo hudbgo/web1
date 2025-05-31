@@ -4,69 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCO | Ciberseguridad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: #0f172a;
-            color: #f1f5f9;
+            color: #e2e8f0;
+            line-height: 1.6;
         }
         header {
-            background-color: #1e293b;
-            padding: 20px;
+            background: linear-gradient(90deg, #0ea5e9, #2563eb);
+            padding: 2rem;
             text-align: center;
+            color: white;
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: #38bdf8;
-        }
-        nav {
-            margin-top: 10px;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
         }
         nav a {
-            color: #f1f5f9;
+            margin: 0 1rem;
+            color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            font-weight: 600;
+            transition: color 0.3s;
         }
         nav a:hover {
-            color: #38bdf8;
+            color: #a5f3fc;
         }
         .hero {
-            padding: 60px 20px;
+            padding: 4rem 2rem;
             text-align: center;
-            background: #0f172a;
+            background: #1e293b;
         }
         .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
         .hero p {
-            font-size: 1.2rem;
-            color: #cbd5e1;
+            font-size: 1.1rem;
+            color: #94a3b8;
         }
         .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 40px 20px;
-            background-color: #1e293b;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: #0f172a;
         }
         .service {
-            flex: 1 1 300px;
-            background-color: #334155;
-            margin: 15px;
-            padding: 20px;
-            border-radius: 12px;
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-5px);
         }
         .service h3 {
             color: #38bdf8;
+            margin-bottom: 0.75rem;
+        }
+        .service p {
+            color: #cbd5e1;
         }
         footer {
-            background-color: #0f172a;
+            background: #1e293b;
             text-align: center;
-            padding: 20px;
+            padding: 2rem;
             font-size: 0.9rem;
             color: #94a3b8;
         }
@@ -76,34 +89,35 @@
     <header>
         <h1>MCO</h1>
         <nav>
+            <img src="img/fotobanner1.png" alt="Logo MCO" width="200">
             <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
+            <a href="#servicios">Temas</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
     <section class="hero" id="inicio">
-        <h2>Expertos en Ciberseguridad</h2>
-        <p>Protegemos tu negocio contra amenazas digitales. Seguridad, confianza y tecnología al servicio de tu empresa.</p>
+        <h2>Bienvenido a MCO</h2>
+        <p>Un espacio personal donde comparto sobre ciberseguridad, hacking ético y tecnología sin complicaciones.</p>
     </section>
 
     <section class="services" id="servicios">
         <div class="service">
-            <h3>Auditorías de Seguridad</h3>
-            <p>Identificamos vulnerabilidades en tus sistemas y redes para fortalecer tus defensas.</p>
+            <h3>Seguridad Web</h3>
+            <p>Protección frente a vulnerabilidades como XSS, CSRF y SQL Injection explicadas con ejemplos simples.</p>
         </div>
         <div class="service">
-            <h3>Consultoría GRC</h3>
-            <p>Ayudamos a tu empresa a cumplir con normativas y estándares internacionales de seguridad.</p>
+            <h3>Buenas prácticas</h3>
+            <p>Recomendaciones básicas y avanzadas para mantener dispositivos, cuentas y sistemas seguros.</p>
         </div>
         <div class="service">
-            <h3>Respuesta ante Incidentes</h3>
-            <p>Actuamos rápidamente para contener y mitigar ciberataques en tiempo real.</p>
+            <h3>Herramientas útiles</h3>
+            <p>Scripts, extensiones y software de código abierto que uso para pentesting y análisis forense.</p>
         </div>
     </section>
 
     <footer id="contacto">
-        <p>&copy; 2025 MCO Ciberseguridad. Todos los derechos reservados.</p>
+        <p>Proyecto personal. Sin afiliación comercial ni recopilación de datos. &copy; 2025</p>
     </footer>
 </body>
 </html>
