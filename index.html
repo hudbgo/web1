@@ -1,131 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCO | Ciberseguridad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0e0e0e;
-            color: #e5e5e5;
-            line-height: 1.6;
-        }
-        header {
-            background: url('img/fotobanner1.png') center/cover no-repeat;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #d1d5db;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-        }
-        header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        nav {
-            margin-top: 1rem;
-        }
-        nav a {
-            margin: 0 1rem;
-            color: #d1d5db;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #a3e635;
-        }
-        .hero {
-            padding: 4rem 2rem;
-            text-align: center;
-            background-color: #121212;
-        }
-        .hero h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: #94a3b8;
-        }
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-            background: #181818;
-        }
-        .service {
-            background-color: #202020;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0,0,0,0.5);
-        }
-        .service h3 {
-            color: #a3e635;
-            margin-bottom: 0.75rem;
-        }
-        .service p {
-            color: #cbd5e1;
-        }
-        footer {
-            background: #121212;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCO | Ciberseguridad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #e5e5e5;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      background: url('img/fotobanner1.png') center/cover no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.3);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #f3f4f6;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      color: #d1d5db;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    nav {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      z-index: 2;
+    }
+
+    nav a {
+      color: #f3f4f6;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #a3e635;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #a3e635;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    footer {
+      background: #121212;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>MCO</h1>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Temas</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
 
-    <section class="hero" id="inicio">
-        <h2>Bienvenido a MCO</h2>
-        <p>Explora el mundo de la ciberseguridad con un enfoque moderno y minimalista. Este sitio personal está dedicado a compartir recursos, ideas y buenas prácticas de seguridad digital.</p>
-    </section>
+  <header>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#temas">Temas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="hero-content">
+      <h1>MCO</h1>
+      <p>Tu espacio digital sobre ciberseguridad, privacidad y tecnología moderna.</p>
+    </div>
+  </header>
 
-    <section class="services" id="servicios">
-        <div class="service">
-            <h3>Seguridad Web</h3>
-            <p>Protección frente a vulnerabilidades como XSS, CSRF y SQL Injection explicadas con ejemplos simples.</p>
-        </div>
-        <div class="service">
-            <h3>Buenas prácticas</h3>
-            <p>Recomendaciones básicas y avanzadas para mantener dispositivos, cuentas y sistemas seguros.</p>
-        </div>
-        <div class="service">
-            <h3>Herramientas útiles</h3>
-            <p>Scripts, extensiones y software de código abierto que uso para pentesting y análisis forense.</p>
-        </div>
-    </section>
+  <section id="inicio">
+    <h2>¿Qué es MCO?</h2>
+    <p>MCO es un proyecto personal centrado en la divulgación de contenidos sobre ciberseguridad. Aquí encontrarás recursos, ideas, consejos y herramientas útiles para entender y aplicar buenas prácticas de seguridad digital, tanto para usuarios como para profesionales.</p>
+  </section>
 
-    <footer id="contacto">
-        <p>Proyecto personal. Sin afiliación comercial ni recopilación de datos. &copy; 2025</p>
-    </footer>
+  <section id="temas">
+    <h2>Temas destacados</h2>
+    <p>Exploramos desde hacking ético y análisis de vulnerabilidades, hasta herramientas OSINT, defensa de redes, hardening de sistemas y mucho más. Todo explicado de forma clara, moderna y accesible.</p>
+  </section>
+
+  <footer id="contacto">
+    <p>&copy; 2025 MCO - Proyecto personal sin ánimo de lucro. No se recopilan datos personales.</p>
+  </footer>
+
 </body>
 </html>
-
