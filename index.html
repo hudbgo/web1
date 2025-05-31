@@ -4,8 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Millan and Co | Ciberseguridad Profesional</title>
+  <meta name="description" content="Planes directores de seguridad personalizados para pymes y particulares. Protección real, eficaz y continua con Millan and Co.">
+  <meta name="keywords" content="ciberseguridad, plan director de seguridad, pruebas de penetración, auditoría de riesgos, pymes, seguridad informática, Millan and Co">
+  <meta name="author" content="Hugo Millan">
+  <meta property="og:title" content="Millan and Co | Ciberseguridad Profesional">
+  <meta property="og:description" content="Planes directores de seguridad personalizados para pymes y particulares. Protección real, eficaz y continua.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://millanandcompany.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Millan and Co | Ciberseguridad Profesional">
+  <meta name="twitter:description" content="Protección digital para pymes y particulares. Auditorías, pentesting y mejoras de seguridad.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -113,18 +124,94 @@
         font-size: 1.5rem;
       }
     }
+
+    .subtext {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 2rem;
+    }
+
+    .proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    }
+
+    .proceso-paso {
+    background-color: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    }
+
+    .proceso-paso:hover {
+    transform: translateY(-4px);
+    }
+
+    .proceso-paso h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #111;
+    }
+
+    .proceso-paso p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    }
+
+    .proceso-zigzag {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    }
+
+    .proceso-paso {
+    background-color: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.2s ease;
+    }
+
+    .paso-izq {
+    align-self: flex-start;
+    }
+
+    .paso-der {
+    align-self: flex-end;
+    }
+
+    .proceso-paso:hover {
+    transform: translateY(-4px);
+    }
+
+    .proceso-paso h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #111;
+    }
+
+    .proceso-paso p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    }
+
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">Millan and Co</div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+
   </header>
 
   <section class="hero" id="inicio">
@@ -133,10 +220,20 @@
   </section>
 
   <section class="section" id="sobre-mi">
-    <h2>¿Quién soy?</h2>
-    <p>Soy un profesional autónomo especializado en ciberseguridad. Ayudo a personas y empresas a proteger sus activos críticos mediante análisis, auditorías, pruebas de penetración y propuestas de mejora física, lógica y organizativa. Trabajo bajo mi marca personal: <strong>Millan and Co</strong>.</p>
+    <h2>¿Quiénes somos?</h2>
+    <p>
+      En <strong>Millan and Co</strong> nos dedicamos a proteger los activos digitales y operativos de pequeñas empresas y particulares mediante soluciones de ciberseguridad adaptadas y eficaces. Nuestro trabajo se basa en la cercanía, el análisis riguroso y la propuesta de mejoras reales que se pueden aplicar desde el primer día.
+    </p>
+    <br>
+    <p>
+      Diseñamos e implementamos <strong>planes directores de seguridad</strong> a medida, evaluamos riesgos, realizamos <strong>auditorías técnicas y organizativas</strong>, ejecutamos <strong>pruebas de penetración</strong> y proponemos acciones concretas para mejorar la seguridad física, lógica y operativa de nuestros clientes.
+    </p>
+    <br>
+    <p>
+      Nuestro compromiso es ayudarte a construir un entorno más seguro, eficiente y resiliente, sin complicaciones innecesarias y con resultados visibles.
+    </p>
   </section>
-
+  
   <section class="section" id="servicios">
     <h2>Servicios</h2>
 
@@ -163,27 +260,70 @@
   </section>
 
   <section class="section" id="proceso">
-    <h2>Mi proceso</h2>
-    <p>Mi enfoque está basado en la cercanía, análisis profundo y soluciones reales:</p>
-    <ul>
-      <li>1. Reunión inicial para conocer tus necesidades</li>
-      <li>2. Análisis de activos, entornos y sistemas</li>
-      <li>3. Pruebas de seguridad y detección de brechas</li>
-      <li>4. Presentación de informe con mejoras claras</li>
-      <li>5. Acompañamiento en la implementación</li>
-    </ul>
+    <h2>Nuestro proceso de trabajo</h2>
+    <p class="subtext">
+      En Millan and Co seguimos una metodología clara, estructurada y personalizada para cada cliente.
+    </p>
+  
+    <div class="proceso-zigzag">
+      <div class="proceso-paso paso-izq">
+        <h3>1. Reunión inicial</h3>
+        <p>Nos reunimos contigo para entender tus necesidades reales, el contexto de tu empresa y el estado actual de tu seguridad.</p>
+      </div>
+      <div class="proceso-paso paso-der">
+        <h3>2. Análisis de activos</h3>
+        <p>Identificamos y auditamos tus sistemas, procesos y dispositivos para hacer una valoración y saber donde está el verdadero peligro.</p>
+      </div>
+      <div class="proceso-paso paso-izq">
+        <h3>3. Pruebas técnicas</h3>
+        <p>Realizamos simulaciones de ataques reales, identificando brechas antes de que un ciberdelincuente, las aproveche.</p>
+      </div>
+      <div class="proceso-paso paso-der">
+        <h3>4. Informe estratégico</h3>
+        <p>Te entregamos tres planes con diferentes presupuestos con acciones priorizadas y soluciones prácticas listas para implementar.</p>
+      </div>
+      <div class="proceso-paso paso-izq">
+        <h3>5. Acompañamiento</h3>
+        <p>Te guiamos durante la implementación, resolvemos dudas y damos una charla para concienciar asegurando una mejora sostenible.</p>
+      </div>
+    </div>
   </section>
-
-  <section class="section" id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Quieres proteger lo que más importa? Escríbeme sin compromiso:</p>
-    <p><strong>Email:</strong> millanandco@ejemplo.com</p>
-    <p><strong>WhatsApp:</strong> +34 600 000 000</p>
+  
+  <section class="section" id="contacto" style="padding: 4rem 1rem; background-color: #f9f9f9;">
+    <div style="max-width: 600px; margin: auto;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; text-align: center;">
+        Contacto
+      </h2>
+      <p style="font-family: 'Inter', sans-serif; text-align: center; margin-bottom: 1.5rem;">
+        ¿Quieres proteger lo que más importa? Escribenos sin compromiso:
+      </p>
+  
+      <form action="https://formspree.io/f/mwpbeyrn" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+        <input type="hidden" name="_redirect" value="https://millanandco.github.io/gracias.html">
+  
+        <label for="name" style="font-family: 'Inter', sans-serif;">Nombre</label>
+        <input type="text" name="name" id="name" required
+          style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; font-family: 'Inter', sans-serif;" />
+  
+        <label for="email" style="font-family: 'Inter', sans-serif;">Correo electrónico</label>
+        <input type="email" name="email" id="email" required
+          style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; font-family: 'Inter', sans-serif;" />
+  
+        <label for="message" style="font-family: 'Inter', sans-serif;">Mensaje</label>
+        <textarea name="message" id="message" rows="5" required
+          style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; font-family: 'Inter', sans-serif;"></textarea>
+  
+        <button type="submit"
+          style="padding: 0.75rem; background-color: #000; color: #fff; border: none; border-radius: 8px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer;">
+          Enviar mensaje
+        </button>
+      </form>
+    </div>
   </section>
+  
 
   <footer>
-    &copy; 2025 Millan and Co – Marca personal de ciberseguridad. Todos los derechos reservados.
+    2025 Millan and Company – Marca personal de ciberseguridad.
   </footer>
-
 </body>
 </html>
