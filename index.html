@@ -55,27 +55,46 @@
       color: #555;
     }
 
+    /* Aquí la sección hero con fondo y efecto parallax suave */
+
     .hero {
+      position: relative;
+      height: 100vh;
+      background-image: url('C:/Users/hugom/Desktop/m&co/Copia de Copia de Fondo.png');
+      background-size: 120% 120%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 6rem 2rem;
+      padding: 0 2rem;
+      color: white;
+      /* Para que el texto resalte sobre la imagen */
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      transition: background-position 0.1s ease-out;
     }
 
     .hero h1 {
       font-size: 3.5rem;
       font-family: 'Playfair Display', serif;
+      user-select: none;
     }
 
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
-      margin: 1rem auto;
-      color: #333;
+      margin: 1rem auto 0;
+      user-select: none;
     }
 
     .section {
       padding: 4rem 2rem;
       max-width: 900px;
       margin: 0 auto;
+      color: #111;
     }
 
     .section h2 {
@@ -126,131 +145,131 @@
     }
 
     .subtext {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 2rem;
     }
 
     .proceso-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .proceso-paso {
-    background-color: #f7f7f7;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease;
+      background-color: #f7f7f7;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
     }
 
     .proceso-paso:hover {
-    transform: translateY(-4px);
+      transform: translateY(-4px);
     }
 
     .proceso-paso h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #111;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #111;
     }
 
     .proceso-paso p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
     }
 
     .proceso-zigzag {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .proceso-paso {
-    background-color: #f7f7f7;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    max-width: 600px;
-    transition: transform 0.2s ease;
+      background-color: #f7f7f7;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      max-width: 600px;
+      transition: transform 0.2s ease;
     }
 
     .paso-izq {
-    align-self: flex-start;
+      align-self: flex-start;
     }
 
     .paso-der {
-    align-self: flex-end;
+      align-self: flex-end;
     }
 
     .proceso-paso:hover {
-    transform: translateY(-4px);
+      transform: translateY(-4px);
     }
 
     .proceso-paso h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #111;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #111;
     }
 
     .proceso-paso p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
     }
     
     .formulario-contacto {
-    max-width: 700px;
-    margin: 2rem auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+      max-width: 700px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .formulario-contacto label {
-    font-weight: 600;
-    margin-bottom: 0.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
     }
 
     .formulario-contacto input,
     .formulario-contacto textarea {
-    padding: 0.75rem 1rem;
-    font-family: inherit;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
     }
 
     .formulario-contacto textarea {
-    resize: vertical;
+      resize: vertical;
     }
 
     .formulario-contacto button {
-    padding: 0.9rem 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: #111;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      padding: 0.9rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #111;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .formulario-contacto button:hover {
-    background-color: #333;
+      background-color: #333;
     }
 
     @font-face {
-    font-family: 'Tan Pearl';
-    src: url('fonts/TanPearl.otf') format('opentype');
+      font-family: 'Tan Pearl';
+      src: url('fonts/TanPearl.otf') format('opentype');
     }
   </style>
 </head>
@@ -276,92 +295,105 @@
     </p>
     <br>
     <p>
-      Nuestro compromiso es ayudarte a construir un entorno más seguro, eficiente y resiliente, sin complicaciones innecesarias y con resultados visibles.
+      Nuestro compromiso es ayudarte a construir un entorno digital seguro, donde puedas concentrarte en tu negocio sin preocupaciones.
     </p>
   </section>
-  
+
   <section class="section" id="servicios">
     <h2>Servicios</h2>
 
     <div class="service-block">
-      <h3>Plan Director de Seguridad</h3>
-      <p>Desarrollo de un plan estratégico que define las prioridades y acciones a seguir para proteger tus activos y sistemas. Este servicio incluye entrevistas, análisis detallado y entregables claros que te guiarán paso a paso en tu camino hacia una ciberseguridad madura y estructurada.</p>
+      <h3>Evaluación de riesgos y auditoría</h3>
+      <p>Evaluación exhaustiva de las vulnerabilidades y amenazas que afectan a tu organización. Te proporcionamos un informe con las áreas críticas y las recomendaciones para mitigarlas eficazmente.</p>
     </div>
 
     <div class="service-block">
-      <h3>Auditoría de riesgos</h3>
-      <p>Realizo una evaluación profunda de tus entornos digitales y físicos para detectar vulnerabilidades, brechas de seguridad y malas prácticas. Identifico las amenazas relevantes y evalúo su impacto potencial, proporcionándote un mapa claro de riesgos y acciones de mitigación prioritarias.</p>
+      <h3>Pruebas de penetración (Pentesting)</h3>
+      <p>Simulamos ataques reales para identificar puntos débiles en tus sistemas, redes y aplicaciones. Nuestro objetivo es anticiparnos a los posibles ciberataques y ayudarte a fortalecer tu defensa.</p>
     </div>
 
     <div class="service-block">
-      <h3>Pruebas de penetración</h3>
-      <p>Simulo ataques reales para evaluar el nivel de resistencia de tus sistemas frente a amenazas externas e internas. Estas pruebas se adaptan a tu infraestructura y permiten descubrir fallos antes de que sean explotados. Recibirás un informe técnico y ejecutivo con todos los hallazgos y soluciones propuestas.</p>
+      <h3>Formación y concienciación</h3>
+      <p>Capacitamos a tus empleados y colaboradores para que adopten buenas prácticas de seguridad en su día a día, reduciendo riesgos derivados del factor humano.</p>
     </div>
-
-    <div class="service-block">
-      <h3>Mejoras integrales de seguridad</h3>
-      <p>Propuesta e implementación de mejoras tanto a nivel físico (controles de acceso, dispositivos), lógico (firewalls, configuraciones seguras) como de rutina operativa (concienciación, políticas internas). El objetivo es elevar tu nivel de seguridad a un estándar profesional y sostenible.</p>
-    </div>
-
   </section>
 
   <section class="section" id="proceso">
-    <h2>Nuestro proceso de trabajo</h2>
-    <p class="subtext">
-      En Millan and Co seguimos una metodología clara, estructurada y personalizada para cada cliente.
-    </p>
-  
+    <h2>¿Cómo trabajamos?</h2>
+    <p class="subtext">Nuestro proceso está diseñado para que entiendas cada paso y confíes en nuestra metodología.</p>
+
     <div class="proceso-zigzag">
       <div class="proceso-paso paso-izq">
-        <h3>1. Reunión inicial</h3>
-        <p>Nos reunimos contigo para entender tus necesidades reales, el contexto de tu empresa y el estado actual de tu seguridad.</p>
+        <h3>1. Análisis inicial</h3>
+        <p>Entendemos tus necesidades y el contexto para definir los objetivos de seguridad.</p>
       </div>
       <div class="proceso-paso paso-der">
-        <h3>2. Análisis de activos</h3>
-        <p>Identificamos y auditamos tus sistemas, procesos y dispositivos para hacer una valoración y saber donde está el verdadero peligro.</p>
+        <h3>2. Diagnóstico</h3>
+        <p>Realizamos evaluaciones técnicas y organizativas para identificar riesgos y vulnerabilidades.</p>
       </div>
       <div class="proceso-paso paso-izq">
-        <h3>3. Pruebas técnicas</h3>
-        <p>Realizamos simulaciones de ataques reales, identificando brechas antes de que un ciberdelincuente, las aproveche.</p>
+        <h3>3. Planificación</h3>
+        <p>Desarrollamos el plan director de seguridad con acciones concretas y priorizadas.</p>
       </div>
       <div class="proceso-paso paso-der">
-        <h3>4. Informe estratégico</h3>
-        <p>Te entregamos tres planes con diferentes presupuestos con acciones priorizadas y soluciones prácticas listas para implementar.</p>
+        <h3>4. Ejecución</h3>
+        <p>Implementamos las medidas y realizamos pruebas de penetración para validar la efectividad.</p>
       </div>
       <div class="proceso-paso paso-izq">
-        <h3>5. Acompañamiento</h3>
-        <p>Te guiamos durante la implementación, resolvemos dudas y damos una charla para concienciar asegurando una mejora sostenible.</p>
+        <h3>5. Seguimiento y mejora</h3>
+        <p>Monitoreamos los resultados y ajustamos las estrategias para mantener la seguridad a largo plazo.</p>
       </div>
     </div>
   </section>
-  
+
   <section class="section" id="contacto">
     <h2>Contacto</h2>
-    <p>¿Quieres proteger lo que más importa? Escríbeme sin compromiso:</p>
-  
-    <form action="https://formspree.io/f/mwpbeyrn" method="POST" class="formulario-contacto">
-      <input type="hidden" name="_redirect" value="https://hudbgo.github.io/web1/gracias.html" />
-  
-      <label for="name">Nombre</label>
-      <input type="text" id="name" name="name" required placeholder="Tu nombre" />
-  
+    <p>¿Quieres proteger tu negocio o tu presencia online? Escríbenos y te ayudamos a mejorar tu seguridad digital.</p>
+
+    <form action="https://formspree.io/f/mwkqpkzw" method="POST" class="formulario-contacto">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+      
       <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com" />
-  
-      <label for="message">Mensaje</label>
-      <textarea id="message" name="message" rows="6" required placeholder="Cuéntame en qué necesitas ayuda"></textarea>
-  
-      <button type="submit">Enviar mensaje</button>
+      <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+      
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+      
+      <button type="submit">Enviar</button>
     </form>
   </section>
-  
-  
-  
-  
-  
 
   <footer>
-    2025 Millan and Company – Marca personal de ciberseguridad.
+    <p>&copy; 2025 Millan and Co. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    // Efecto de desplazamiento suave del fondo según movimiento del ratón
+    const hero = document.querySelector('.hero');
+    let timeout;
+
+    window.addEventListener('mousemove', (e) => {
+      clearTimeout(timeout);
+
+      // Coordenadas del ratón respecto a la ventana
+      const x = e.clientX;
+      const y = e.clientY;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // Calculamos porcentaje del movimiento para desplazar el fondo de forma sutil (máximo ±10%)
+      const moveX = (x / width - 0.5) * 20;  // -10% a +10%
+      const moveY = (y / height - 0.5) * 20; // -10% a +10%
+
+      // Ajustamos background-position en %
+      hero.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+
+      // Después de 100 ms sin mover, vuelve al centro suavemente
+      timeout = setTimeout(() => {
+        hero.style.backgroundPosition = 'center center';
+      }, 100);
+    });
+  </script>
 </body>
 </html>
