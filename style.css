@@ -289,15 +289,26 @@ body.index .section {
 }
 /* Ajustes específicos para index.html en móvil */
 @media (max-width: 480px) {
+  body.index header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+  }
+
   body.index .hero {
-    height: 70vh;          /* Altura más corta para móvil */
-    padding: 0 1rem;       /* Menos padding lateral */
-    justify-content: flex-start; /* Empieza un poco más arriba */
-    padding-top: 4rem;     /* Espacio extra arriba para compensar header fijo */
+    height: calc(100vh - 60px); /* Altura total menos altura del header fijo */
+    padding: 1rem 1rem 0 1rem;   /* Padding para no tocar bordes y compensar header */
+    padding-top: 60px;           /* Espacio arriba para que no quede tapado por el header */
+    justify-content: flex-start;
+    overflow: hidden;
   }
 
   body.index .hero h1 {
-    font-size: 2rem !important;     /* Texto principal más pequeño */
+    font-size: 2rem !important;
     line-height: 2.2rem;
     margin-bottom: 0.5rem;
   }
@@ -306,11 +317,6 @@ body.index .section {
     font-size: 1rem !important;
     max-width: 90%;
     margin: 0 auto;
-  }
-
-  /* Ajustar header en móvil */
-  body.index header {
-    padding: 1rem;
   }
 
   body.index nav {
@@ -326,7 +332,6 @@ body.index .section {
     font-size: 1rem;
   }
 
-  /* Ajuste general del contenido para evitar overflow horizontal */
   body.index {
     overflow-x: hidden;
   }
