@@ -236,3 +236,49 @@ body.index .section {
   color: white;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
+
+/* Mejoras responsive móviles para toda la web */
+@media (max-width: 480px) {
+  /* Header y nav en móvil: menos padding, flex-wrap para que no se desborde */
+  header {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  nav {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  nav a {
+    margin: 0.3rem 0.8rem;
+    font-size: 1rem;
+  }
+  /* Logo más pequeño y centrado */
+  .logo {
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+  }
+  /* Hero en index: reducir padding, texto más pequeño y altura menor para que no sobrepase */
+  body.index .hero {
+    padding: 0 1rem;
+    height: 70vh;
+    justify-content: center;
+  }
+  body.index .hero h1 {
+    font-size: 2rem !important;
+    line-height: 2.2rem;
+  }
+  body.index .hero p {
+    font-size: 1rem !important;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  /* Sección padding reducido para mejor encaje */
+  .section {
+    padding: 2rem 1rem;
+    max-width: 100%;
+  }
+}
