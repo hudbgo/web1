@@ -287,3 +287,47 @@ body.index .section {
     max-width: 100%;
   }
 }
+/* Ajustes específicos para index.html en móvil */
+@media (max-width: 480px) {
+  body.index .hero {
+    height: 70vh;          /* Altura más corta para móvil */
+    padding: 0 1rem;       /* Menos padding lateral */
+    justify-content: flex-start; /* Empieza un poco más arriba */
+    padding-top: 4rem;     /* Espacio extra arriba para compensar header fijo */
+  }
+
+  body.index .hero h1 {
+    font-size: 2rem !important;     /* Texto principal más pequeño */
+    line-height: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  body.index .hero p {
+    font-size: 1rem !important;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Ajustar header en móvil */
+  body.index header {
+    padding: 1rem;
+  }
+
+  body.index nav {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  body.index nav a {
+    margin: 0.3rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  /* Ajuste general del contenido para evitar overflow horizontal */
+  body.index {
+    overflow-x: hidden;
+  }
+}
