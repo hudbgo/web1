@@ -199,7 +199,7 @@ body.index .hero {
 
   background-image: url('img/fondoindex.png');
   background-repeat: no-repeat;
-  background-size: 105%;
+  background-size: 115%;
   background-position: center center;
 
   /* IMPORTANTE: no fixed para que pueda moverse */
