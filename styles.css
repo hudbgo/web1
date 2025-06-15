@@ -1,0 +1,238 @@
+/* styles.css */
+
+/* Reset general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Header y nav comunes */
+header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #555;
+}
+
+/* Secciones generales */
+.section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #111;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Bloques de servicios */
+.service-block {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.service-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-block p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Formulario */
+.formulario-contacto {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario-contacto label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.formulario-contacto textarea {
+  resize: vertical;
+}
+
+.formulario-contacto button {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: #333;
+}
+
+/* Fuentes */
+@font-face {
+  font-family: 'Tan Pearl';
+  src: url('fonts/TanPearl.otf') format('opentype');
+}
+
+/* ===================
+   ESTILOS ÚNICOS PARA INDEX.HTML
+   =================== */
+
+body.index {
+  /* Ya no tiene fondo ni fixed */
+  color: white;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Nav superpuesto, transparente */
+body.index header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.4); /* negro con transparencia */
+  border-bottom: none;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo y links en blanco para visibilidad */
+body.index .logo,
+body.index nav a {
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+body.index nav a:hover {
+  color: #ddd;
+}
+
+/* Hero para index, ocupa toda la pantalla, con fondo que se mueve con el ratón */
+body.index .hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  user-select: none;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+
+  background-image: url("C:/Users/hugom/Desktop/m&co/Copia de Copia de Fondo.png");
+  background-repeat: no-repeat;
+  background-size: 105%;
+  background-position: center center;
+
+  /* IMPORTANTE: no fixed para que pueda moverse */
+  /* transición para que el movimiento sea suave */
+  transition: background-position 0.3s ease-out;
+  width: 100%;
+}
+
+/* Texto hero */
+body.index .hero h1 {
+  font-size: 5.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+body.index .hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+/* Ajustes responsivos para hero */
+@media (max-width: 768px) {
+  body.index .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Ajusta el padding-top para que el contenido no quede oculto tras el header fijo */
+body.index .section {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
