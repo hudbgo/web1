@@ -12,7 +12,6 @@ body {
   background-color: #ffffff;
   color: #111;
   line-height: 1.6;
-  overflow-x: hidden; /* Evita scroll horizontal en toda la página */
 }
 
 /* Header y nav comunes */
@@ -22,7 +21,6 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  flex-wrap: nowrap;
 }
 
 .logo {
@@ -31,16 +29,11 @@ header {
   font-weight: 600;
 }
 
-nav {
-  display: flex;
-  gap: 2rem;
-}
-
 nav a {
+  margin-left: 2rem;
   text-decoration: none;
   color: #111;
   font-weight: 500;
-  font-size: 1rem;
 }
 
 nav a:hover {
@@ -95,7 +88,7 @@ footer {
   margin-top: 4rem;
 }
 
-/* Responsive general */
+/* Responsive */
 @media (max-width: 768px) {
   .section h2 {
     font-size: 1.5rem;
@@ -157,6 +150,7 @@ footer {
    =================== */
 
 body.index {
+  /* Ya no tiene fondo ni fixed */
   color: white;
   line-height: 1.6;
   font-family: 'Inter', sans-serif;
@@ -170,13 +164,12 @@ body.index header {
   left: 0;
   width: 100%;
   padding: 1.5rem 2rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4); /* negro con transparencia */
   border-bottom: none;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
 }
 
 /* Logo y links en blanco para visibilidad */
@@ -197,6 +190,7 @@ body.index .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
   align-items: center;
   text-align: center;
   padding: 0 2rem;
@@ -205,9 +199,11 @@ body.index .hero {
 
   background-image: url('img/fondoindex.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 105%;
   background-position: center center;
 
+  /* IMPORTANTE: no fixed para que pueda moverse */
+  /* transición para que el movimiento sea suave */
   transition: background-position 0.3s ease-out;
   width: 100%;
 }
@@ -239,51 +235,4 @@ body.index .section {
   margin: 0 auto;
   color: white;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
-}
-
-/* Mejoras responsive móviles para toda la web */
-@media (max-width: 480px) {
-  /* Header y nav en móvil: menos padding, flex-wrap para que no se desborde */
-  header {
-    padding: 1rem;
-    flex-wrap: wrap;
-  }
-  nav {
-    width: 100%;
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  nav a {
-    margin: 0.3rem 0.8rem;
-    font-size: 1rem;
-  }
-  /* Logo más pequeño y centrado */
-  .logo {
-    font-size: 1.4rem;
-    width: 100%;
-    text-align: center;
-  }
-  /* Hero en index: reducir padding, texto más pequeño y altura menor para que no sobrepase */
-  body.index .hero {
-    padding: 0 1rem;
-    height: 70vh;
-    justify-content: center;
-  }
-  body.index .hero h1 {
-    font-size: 2rem !important;
-    line-height: 2.2rem;
-  }
-  body.index .hero p {
-    font-size: 1rem !important;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  /* Sección padding reducido para mejor encaje */
-  .section {
-    padding: 2rem 1rem;
-    max-width: 100%;
-  }
 }
