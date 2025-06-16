@@ -36,8 +36,16 @@ header {
   font-weight: 600;
 }
 
+/* Nav escritorio */
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Links nav */
 nav a {
-  margin-left: 2rem;
+  /* Margin-left eliminado para usar gap */
   text-decoration: none;
   color: #111;
   font-weight: 500;
@@ -46,6 +54,16 @@ nav a {
 
 nav a:hover {
   color: #555;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
 }
 
 /* ========== SECTIONS GENERALES ========== */
@@ -140,9 +158,31 @@ footer {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1001;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
   nav a {
-    margin-left: 1rem;
-    font-size: 0.95rem;
+    margin: 1rem;
+    color: #111;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .formulario-contacto {
