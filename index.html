@@ -25,6 +25,10 @@
       M<span style="font-size: 38px;">&</span>CO
     </div>
 
+    <button class="menu-toggle" aria-label="Abrir menú">
+      &#9776;
+    </button>
+    
     <nav>
     <a href="index.html">Inicio</a>
     <a href="servicios.html">Servicios</a>
@@ -66,5 +70,15 @@
       }, 100);
     });
   </script>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+  
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+
 </body>
 </html>
