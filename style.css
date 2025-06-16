@@ -221,29 +221,31 @@ body.index .section {
   color: white;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
-/* Diseño responsive del nav para móviles */
+
+/* nav para mobiles */
 @media (max-width: 768px) {
-  nav {
+  header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
-    padding: 1rem;
-  }
-
-  nav a {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  header {
-    flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
   }
 
   header > div {
     font-size: 2rem !important;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+    padding: 0.2rem 0;
   }
 }
