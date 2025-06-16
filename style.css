@@ -36,8 +36,15 @@ header {
   font-weight: 600;
 }
 
+/* Nav escritorio */
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Links nav */
 nav a {
-  margin-left: 2rem;
   text-decoration: none;
   color: #111;
   font-weight: 500;
@@ -45,6 +52,21 @@ nav a {
 }
 
 nav a:hover {
+  color: #555;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
   color: #555;
 }
 
@@ -140,9 +162,47 @@ footer {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #111; /* fondo oscuro para desplegable */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    padding: 1rem 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1001;
+  }
+
+  nav.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   nav a {
-    margin-left: 1rem;
-    font-size: 0.95rem;
+    margin: 0.8rem 1.5rem;
+    color: #eee;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #1db954;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #111;
+  }
+
+  .menu-toggle:hover {
+    color: #1db954;
   }
 
   .formulario-contacto {
@@ -220,60 +280,4 @@ body.index .section {
   padding-top: 7rem;
   color: white;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
-}
-
-/* ========== MENÚ HAMBURGUESA ========== */
-.menu-toggle {
-  display: none;
-  font-size: 2.2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-.menu-toggle:hover {
-  color: #007bff;
-}
-
-/* MENU HAMBURGUESA - MOBILE */
-@media (max-width: 768px) {
-  nav {
-    max-height: 0;
-    overflow: hidden;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 220px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    transition: max-height 0.35s ease-in-out, opacity 0.3s ease;
-    opacity: 0;
-    padding: 0 1rem;
-    z-index: 1001;
-  }
-
-  nav.open {
-    max-height: 500px;
-    opacity: 1;
-    padding: 1rem 1rem;
-  }
-
-  nav a {
-    margin: 1rem 0;
-    color: #111;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-
-  nav a:hover {
-    color: #007bff;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
 }
