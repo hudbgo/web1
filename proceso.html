@@ -18,49 +18,69 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div style="font-family: 'Tan Pearl', serif; font-size: 48px;">
-      M<span style="font-size: 38px;">&</span>CO
-    </div>
-     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="proceso.html">Proceso</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="sobre-nosotros.html">Sobre Nosotros</a>
-    </nav>
-  </header>
-  <main>
-    <section class="section" id="proceso">
-      <h2>¿Cómo trabajamos?</h2>
-      <p class="subtext">Nuestro proceso está diseñado para que entiendas cada paso y confíes en nuestra metodología.</p>
-
-      <div class="service-block">
-        <h3>1. Análisis inicial</h3>
-        <p>Entendemos tus necesidades y el contexto para definir los objetivos de seguridad.</p>
-      </div>
-
-      <div class="service-block">
-        <h3>2. Diagnóstico</h3>
-        <p>Realizamos evaluaciones técnicas y organizativas para identificar riesgos y vulnerabilidades.</p>
-      </div>
-
-      <div class="service-block">
-        <h3>3. Planificación</h3>
-        <p>Desarrollamos el plan director de seguridad con acciones concretas y priorizadas.</p>
-      </div>
-
-      <div class="service-block">
-        <h3>4. Ejecución</h3>
-        <p>Implementamos las medidas y realizamos pruebas de penetración para validar la efectividad.</p>
-      </div>
-
-      <div class="service-block">
-        <h3>5. Seguimiento y mejora</h3>
-        <p>Monitoreamos los resultados y ajustamos las estrategias para mantener la seguridad a largo plazo.</p>
-      </div>
-    </section>
-  </main>
-
+    <header>
+        <div class="logo" style="font-family: 'Tan Pearl', serif; font-size: 48px;">
+          M<span style="font-size: 38px;">&</span>CO
+        </div>
+    
+        <nav id="nav">
+          <a href="index.html">Inicio</a>
+          <a href="servicios.html" class="active">Servicios</a>
+          <a href="proceso.html">Proceso</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="sobre-nosotros.html">Sobre Nosotros</a>
+        </nav>
+    
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+    </header>
+    <main>
+        <section class="section" id="proceso">
+          <h2>¿Cómo trabajamos?</h2>
+          <p class="subtext">Nuestro proceso está diseñado para que entiendas cada paso y confíes en nuestra metodología.</p>
+    
+          <div class="service-block">
+            <h3>1. Análisis inicial</h3>
+            <p>Entendemos tus necesidades y el contexto para definir los objetivos de seguridad.</p>
+          </div>
+    
+          <div class="service-block">
+            <h3>2. Diagnóstico</h3>
+            <p>Realizamos evaluaciones técnicas y organizativas para identificar riesgos y vulnerabilidades.</p>
+          </div>
+    
+          <div class="service-block">
+            <h3>3. Planificación</h3>
+            <p>Desarrollamos el plan director de seguridad con acciones concretas y priorizadas.</p>
+          </div>
+    
+          <div class="service-block">
+            <h3>4. Ejecución</h3>
+            <p>Implementamos las medidas y realizamos pruebas de penetración para validar la efectividad.</p>
+          </div>
+    
+          <div class="service-block">
+            <h3>5. Seguimiento y mejora</h3>
+            <p>Monitoreamos los resultados y ajustamos las estrategias para mantener la seguridad a largo plazo.</p>
+          </div>
+        </section>
+    </main>
+    <script>
+        const toggleBtn = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+    
+        toggleBtn.addEventListener('click', () => {
+          toggleBtn.classList.toggle('active');
+          nav.classList.toggle('open');
+        });
+    
+        const isIndex = window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html';
+        if (toggleBtn) {
+          toggleBtn.classList.add(isIndex ? 'hamburger-white' : 'hamburger-black');
+        }
+    </script>
 </body>
 </html>
