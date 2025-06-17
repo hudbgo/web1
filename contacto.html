@@ -19,35 +19,55 @@
 </head>
 <body>
     <header>
-        <div style="font-family: 'Tan Pearl', serif; font-size: 48px;">
-            M<span style="font-size: 38px;">&</span>CO
+        <div class="logo" style="font-family: 'Tan Pearl', serif; font-size: 48px;">
+          M<span style="font-size: 38px;">&</span>CO
         </div>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="proceso.html">Proceso</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="sobre-nosotros.html">Sobre Nosotros</a>
+    
+        <nav id="nav">
+          <a href="index.html">Inicio</a>
+          <a href="servicios.html" class="active">Servicios</a>
+          <a href="proceso.html">Proceso</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="sobre-nosotros.html">Sobre Nosotros</a>
         </nav>
+    
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
     </header>
   
-   <section class="section" id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Quieres proteger tu negocio o tu presencia online? Escríbenos y te ayudamos a mejorar tu seguridad digital.</p>
-
-    <form action="https://formspree.io/f/mwkqpkzw" method="POST" class="formulario-contacto">
-      <label for="nombre">Nombre completo</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
-      
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
-      
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
-      
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-
+    <section class="section" id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Quieres proteger tu negocio o tu presencia online? Escríbenos y te ayudamos a mejorar tu seguridad digital.</p>
+    
+        <form action="https://formspree.io/f/mwkqpkzw" method="POST" class="formulario-contacto">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+          
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+          
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+          
+        <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <script>
+        const toggleBtn = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+    
+        toggleBtn.addEventListener('click', () => {
+          toggleBtn.classList.toggle('active');
+          nav.classList.toggle('open');
+        });
+    
+        const isIndex = window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html';
+        if (toggleBtn) {
+          toggleBtn.classList.add(isIndex ? 'hamburger-white' : 'hamburger-black');
+        }
+    </script>
 </body>
 </html>
