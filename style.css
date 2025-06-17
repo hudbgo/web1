@@ -63,27 +63,32 @@ nav a:hover {
   position: relative;
   cursor: pointer;
   z-index: 1100;
+  background: none;
+  border: none;
 }
 
 .menu-toggle span {
   position: absolute;
   height: 3px;
   width: 100%;
-  background-color: white;
   left: 0;
   transition: all 0.3s ease;
   border-radius: 2px;
 }
 
-.menu-toggle span:nth-child(1) {
-  top: 0;
+/* Color negro por defecto */
+.menu-toggle span {
+  background-color: #111;
 }
-.menu-toggle span:nth-child(2) {
-  top: 10px;
+
+/* Blanco solo en index */
+body.index .menu-toggle span {
+  background-color: #fff;
 }
-.menu-toggle span:nth-child(3) {
-  top: 20px;
-}
+
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 10px; }
+.menu-toggle span:nth-child(3) { top: 20px; }
 
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg);
