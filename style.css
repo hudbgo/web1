@@ -69,7 +69,7 @@ nav a:hover {
   position: absolute;
   height: 3px;
   width: 100%;
-  background-color: transparent;
+  background-color: white;
   left: 0;
   transition: all 0.3s ease;
   border-radius: 2px;
