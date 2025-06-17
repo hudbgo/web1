@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M&Co | Servicios</title>
+
   <meta name="description" content="Planes directores de seguridad personalizados para pymes y particulares. Protección real, eficaz y continua con Millan and Co.">
   <meta name="keywords" content="ciberseguridad, plan director de seguridad, pruebas de penetración, auditoría de riesgos, pymes, seguridad informática, Millan and Co">
   <meta name="author" content="Hugo Millan">
@@ -14,62 +15,67 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Millan and Co | Ciberseguridad Profesional">
   <meta name="twitter:description" content="Protección digital para pymes y particulares. Auditorías, pentesting y mejoras de seguridad.">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-   <div style="font-family: 'Tan Pearl', serif; font-size: 48px;">
+
+  <header>
+    <div class="logo" style="font-family: 'Tan Pearl', serif; font-size: 48px;">
       M<span style="font-size: 38px;">&</span>CO
     </div>
 
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="proceso.html">Proceso</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+    <nav id="nav">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html" class="active">Servicios</a>
+      <a href="proceso.html">Proceso</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="sobre-nosotros.html">Sobre Nosotros</a>
     </nav>
-  </header>
-  
-    <section class="section" id="servicios">
-        <h2>Servicios</h2>
-    
-        <div class="service-block">
-          <h3>Evaluación de riesgos y auditoría</h3>
-          <p>Evaluación exhaustiva de las vulnerabilidades y amenazas que afectan a tu organización. Te proporcionamos un informe con las áreas críticas y las recomendaciones para mitigarlas eficazmente.</p>
-        </div>
-    
-        <div class="service-block">
-          <h3>Pruebas de penetración (Pentesting)</h3>
-          <p>Simulamos ataques reales para identificar puntos débiles en tus sistemas, redes y aplicaciones. Nuestro objetivo es anticiparnos a los posibles ciberataques y ayudarte a fortalecer tu defensa.</p>
-        </div>
-    
-        <div class="service-block">
-          <h3>Formación y concienciación</h3>
-          <p>Capacitamos a tus empleados y colaboradores para que adopten buenas prácticas de seguridad en su día a día, reduciendo riesgos derivados del factor humano.</p>
-        </div>
-    </section>
 
-    <script>
-      function toggleMenu() {
-        document.querySelector('nav').classList.toggle('show');
-      }
-    
-      // Cambiar color del icono hamburguesa según la página
-      const isIndex = window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html';
-      const hamburger = document.querySelector('.hamburger');
-    
-      if (hamburger) {
-        hamburger.classList.add(isIndex ? 'hamburger-white' : 'hamburger-black');
-      }
-    </script>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="section" id="servicios">
+      <h2>Servicios</h2>
+
+      <div class="service-block">
+        <h3>Evaluación de riesgos y auditoría</h3>
+        <p>Evaluación exhaustiva de las vulnerabilidades y amenazas que afectan a tu organización. Te proporcionamos un informe con las áreas críticas y las recomendaciones para mitigarlas eficazmente.</p>
+      </div>
+
+      <div class="service-block">
+        <h3>Pruebas de penetración (Pentesting)</h3>
+        <p>Simulamos ataques reales para identificar puntos débiles en tus sistemas, redes y aplicaciones. Nuestro objetivo es anticiparnos a los posibles ciberataques y ayudarte a fortalecer tu defensa.</p>
+      </div>
+
+      <div class="service-block">
+        <h3>Formación y concienciación</h3>
+        <p>Capacitamos a tus empleados y colaboradores para que adopten buenas prácticas de seguridad en su día a día, reduciendo riesgos derivados del factor humano.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+
+    const isIndex = window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html';
+    if (toggleBtn) {
+      toggleBtn.classList.add(isIndex ? 'hamburger-white' : 'hamburger-black');
+    }
+  </script>
 
 </body>
 </html>
