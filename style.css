@@ -25,7 +25,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  background-color: #fff;
+  background-color: transparent;
   position: relative;
   z-index: 1000;
 }
