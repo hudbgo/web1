@@ -22,6 +22,13 @@
    <div style="font-family: 'Tan Pearl', serif; font-size: 48px;">
       M<span style="font-size: 38px;">&</span>CO
     </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
@@ -32,22 +39,37 @@
   </header>
   
     <section class="section" id="servicios">
-    <h2>Servicios</h2>
+        <h2>Servicios</h2>
+    
+        <div class="service-block">
+          <h3>Evaluación de riesgos y auditoría</h3>
+          <p>Evaluación exhaustiva de las vulnerabilidades y amenazas que afectan a tu organización. Te proporcionamos un informe con las áreas críticas y las recomendaciones para mitigarlas eficazmente.</p>
+        </div>
+    
+        <div class="service-block">
+          <h3>Pruebas de penetración (Pentesting)</h3>
+          <p>Simulamos ataques reales para identificar puntos débiles en tus sistemas, redes y aplicaciones. Nuestro objetivo es anticiparnos a los posibles ciberataques y ayudarte a fortalecer tu defensa.</p>
+        </div>
+    
+        <div class="service-block">
+          <h3>Formación y concienciación</h3>
+          <p>Capacitamos a tus empleados y colaboradores para que adopten buenas prácticas de seguridad en su día a día, reduciendo riesgos derivados del factor humano.</p>
+        </div>
+    </section>
 
-    <div class="service-block">
-      <h3>Evaluación de riesgos y auditoría</h3>
-      <p>Evaluación exhaustiva de las vulnerabilidades y amenazas que afectan a tu organización. Te proporcionamos un informe con las áreas críticas y las recomendaciones para mitigarlas eficazmente.</p>
-    </div>
+    <script>
+      function toggleMenu() {
+        document.querySelector('nav').classList.toggle('show');
+      }
+    
+      // Cambiar color del icono hamburguesa según la página
+      const isIndex = window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html';
+      const hamburger = document.querySelector('.hamburger');
+    
+      if (hamburger) {
+        hamburger.classList.add(isIndex ? 'hamburger-white' : 'hamburger-black');
+      }
+    </script>
 
-    <div class="service-block">
-      <h3>Pruebas de penetración (Pentesting)</h3>
-      <p>Simulamos ataques reales para identificar puntos débiles en tus sistemas, redes y aplicaciones. Nuestro objetivo es anticiparnos a los posibles ciberataques y ayudarte a fortalecer tu defensa.</p>
-    </div>
-
-    <div class="service-block">
-      <h3>Formación y concienciación</h3>
-      <p>Capacitamos a tus empleados y colaboradores para que adopten buenas prácticas de seguridad en su día a día, reduciendo riesgos derivados del factor humano.</p>
-    </div>
-  </section>
 </body>
 </html>
