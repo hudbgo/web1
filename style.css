@@ -63,6 +63,7 @@ nav a:hover {
   position: relative;
   cursor: pointer;
   z-index: 1100;
+  background: transparent !important;
 }
 
 .menu-toggle span {
