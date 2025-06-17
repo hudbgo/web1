@@ -3,82 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M&Co | Consultora ciberseguridad</title>
-  <meta name="description" content="Planes directores de seguridad personalizados para pymes y particulares. Protección real, eficaz y continua con Millan and Co.">
-  <meta name="keywords" content="ciberseguridad, plan director de seguridad, pruebas de penetración, auditoría de riesgos, pymes, seguridad informática, Millan and Co">
-  <meta name="author" content="Hugo Millan">
-  <meta property="og:title" content="Millan and Co | Ciberseguridad Profesional">
-  <meta property="og:description" content="Planes directores de seguridad personalizados para pymes y particulares. Protección real, eficaz y continua.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://millanandcompany.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Millan and Co | Ciberseguridad Profesional">
-  <meta name="twitter:description" content="Protección digital para pymes y particulares. Auditorías, pentesting y mejoras de seguridad.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="img/logosinfondo.png">
+  <title>Millan and Co</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="index">
-
+  <!-- Header -->
   <header>
-    <div style="font-family: 'Tan Pearl', serif; font-size: 48px;">
-      M<span style="font-size: 38px;">&</span>CO
-    </div>
-
+    <div class="logo">Millan and Co</div>
     <button class="menu-toggle" aria-label="Abrir menú">
-      &#9776;
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    
     <nav>
-    <a href="index.html">Inicio</a>
-    <a href="servicios.html">Servicios</a>
-    <a href="proceso.html">Proceso</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="sobre-nosotros.html">Sobre Nosotros</a>
-  </nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <section class="hero" id="inicio">
-    <h1>Confianza digital para tu negocio</h1>
-    <p>Planes directores de seguridad personalizados para pymes y particulares. Protección real, eficaz y continua.</p>
+  <!-- Hero principal -->
+  <section class="hero">
+    <h1>Planes Directores de Seguridad</h1>
+    <p>Protege lo que realmente importa. Servicios de ciberseguridad para empresas y figuras públicas.</p>
   </section>
 
+  <!-- Sección de servicios -->
+  <section class="section" id="servicios">
+    <h2>Servicios</h2>
+    <div class="service-block">
+      <h3>Planes Directores de Seguridad</h3>
+      <p>Evaluamos tus activos y te ayudamos a protegerlos con medidas físicas, lógicas y organizativas.</p>
+    </div>
+    <div class="service-block">
+      <h3>Pentesting ético</h3>
+      <p>Realizamos pruebas de penetración para detectar vulnerabilidades antes que lo hagan otros.</p>
+    </div>
+    <div class="service-block">
+      <h3>Consultoría Personalizada</h3>
+      <p>Asesoramiento en ciberseguridad para empresarios, influencers o cualquier persona con información crítica.</p>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section class="section" id="sobre">
+    <h2>Sobre mí</h2>
+    <p>Soy Hugo, técnico en ASIR, especializado en ciberseguridad. Mi misión es proteger los activos más importantes de personas y empresas mediante soluciones profesionales, accesibles y efectivas.</p>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <form class="formulario-contacto">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Millan and Co. Todos los derechos reservados.
+  </footer>
+
+  <!-- Script hamburguesa -->
   <script>
-    // Efecto de desplazamiento suave del fondo según movimiento del ratón
-    const hero = document.querySelector('.hero');
-    let timeout;
-
-    window.addEventListener('mousemove', (e) => {
-      clearTimeout(timeout);
-
-      // Coordenadas del ratón respecto a la ventana
-      const x = e.clientX;
-      const y = e.clientY;
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      // Calculamos porcentaje del movimiento para desplazar el fondo de forma sutil (máximo ±10%)
-      const moveX = (x / width - 0.5) * 60;  // -10% a +10%
-      const moveY = (y / height - 0.5) * 60; // -10% a +10%
-
-      // Ajustamos background-position en %
-      hero.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
-
-      // Después de 100 ms sin mover, vuelve al centro suavemente
-      timeout = setTimeout(() => {
-        hero.style.backgroundPosition = 'center center';
-      }, 100);
-    });
-  </script>
-
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
+    const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
-  
-    menuToggle.addEventListener('click', () => {
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
       nav.classList.toggle('open');
     });
-  </script>
 
+    document.addEventListener('click', (e) => {
+      const clickedInside = toggle.contains(e.target) || nav.contains(e.target);
+      if (!clickedInside) {
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
+      }
+
+      if (e.target.tagName === 'A' && nav.classList.contains('open')) {
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
