@@ -58,3 +58,15 @@ body.index .section {
   color: white;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
+
+body.index nav a {
+  color: white;
+  text-decoration: none; /* Añade esto */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+body.index nav a:hover {
+  color: #ddd;
+  text-decoration: none; /* Esto asegura que no aparezca subrayado al hacer hover */
+}
+
