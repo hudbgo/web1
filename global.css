@@ -126,14 +126,31 @@ footer {
   src: url('fonts/TanPearl.otf') format('opentype');
 }
 
+/* Estilos generales para nav en escritorio */
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: none; /* Sin fondo ni transparencia en escritorio */
+  position: static;
+  box-shadow: none;
+  transform: none;
+  flex-direction: row;
+  padding: 0;
+  max-height: none;
+  transition: none;
+  overflow: visible;
+}
+
+/* ====== MÓVIL ====== */
 @media (max-width: 768px) {
   nav {
     position: fixed;
-    top: 80px; /* Separado del top para dejar espacio al header */
+    top: 80px; /* Para dejar espacio al header */
     right: 1rem;
     width: 260px;
     max-height: auto;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.85); /* Fondo translúcido solo aquí */
     backdrop-filter: blur(10px);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -157,12 +174,7 @@ footer {
     padding: 1rem 1.5rem;
     display: block;
     width: 100%;
-    /* border-bottom removed */
     transition: background 0.3s ease, color 0.3s ease;
-  }
-
-  nav a:last-child {
-    /* No border-bottom */
   }
 
   nav a:hover,
@@ -209,7 +221,7 @@ footer {
   }
 }
 
-/* Estilo especial para index con fondo oscuro */
+/* Fondo y estilos especiales para index con menú móvil */
 body.index nav {
   background: rgba(17, 17, 17, 0.95) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
@@ -217,7 +229,6 @@ body.index nav {
 
 body.index nav a {
   color: #eee !important;
-  /* border-bottom removed */
 }
 
 body.index nav a:hover {
