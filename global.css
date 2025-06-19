@@ -125,3 +125,106 @@ footer {
   font-family: 'Tan Pearl';
   src: url('fonts/TanPearl.otf') format('opentype');
 }
+
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 80px; /* Separado del top para dejar espacio al header */
+    right: 1rem;
+    width: 260px;
+    max-height: auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(120%);
+    transition: transform 0.35s ease-in-out;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 0;
+    z-index: 1050;
+    overflow: hidden;
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  nav a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #111;
+    padding: 1rem 1.5rem;
+    display: block;
+    width: 100%;
+    /* border-bottom removed */
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  nav a:last-child {
+    /* No border-bottom */
+  }
+
+  nav a:hover,
+  nav a:focus {
+    background-color: #f0f0f0;
+    color: #0070f3;
+  }
+
+  .menu-toggle {
+    display: block;
+    width: 32px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1100;
+    background: none;
+    border: none;
+  }
+
+  .menu-toggle span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    border-radius: 3px;
+    background-color: #111;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle span:nth-child(1) { top: 0; }
+  .menu-toggle span:nth-child(2) { top: 12px; }
+  .menu-toggle span:nth-child(3) { top: 24px; }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 12px;
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 12px;
+  }
+}
+
+/* Estilo especial para index con fondo oscuro */
+body.index nav {
+  background: rgba(17, 17, 17, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.index nav a {
+  color: #eee !important;
+  /* border-bottom removed */
+}
+
+body.index nav a:hover {
+  background-color: #222 !important;
+  color: #00d1ff !important;
+}
+
+body.index .menu-toggle span {
+  background-color: #eee !important;
+}
