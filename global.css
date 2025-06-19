@@ -43,7 +43,10 @@ nav {
   align-items: center;
 }
 
-nav a {
+nav a,
+nav a:visited,
+nav a:focus,
+nav a:active {
   text-decoration: none;
   color: #111;
   font-weight: 500;
@@ -126,15 +129,16 @@ footer {
   src: url('fonts/TanPearl.otf') format('opentype');
 }
 
+/* ====== MOBILE MENU ====== */
 @media (max-width: 768px) {
   header {
-    position: relative; /* importante para que el nav se posicione respecto al header */
+    position: relative;
   }
 
   nav {
     position: absolute;
-    top: 100%; /* justo debajo del header */
-    right: 1.5rem; /* alineado con el botón */
+    top: 100%;
+    right: 1.5rem;
     width: 220px;
     max-height: 80vh;
     background-color: rgba(255, 255, 255, 0.95);
@@ -164,13 +168,18 @@ footer {
   }
 }
 
+/* ====== INDEX PAGE STYLING ====== */
 body.index nav {
   background-color: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: blur(10px);
 }
 
-body.index nav a {
+body.index nav a,
+body.index nav a:visited,
+body.index nav a:focus,
+body.index nav a:active {
   color: #fff !important;
+  text-decoration: none !important;
 }
 
 body.index .menu-toggle span {
