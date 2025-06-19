@@ -58,16 +58,3 @@ body.index .section {
   color: white;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
-
-body.index nav {
-  background-color: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: blur(10px);
-}
-
-body.index nav a {
-  color: #fff !important;
-}
-
-body.index .menu-toggle span {
-  background-color: #fff !important;
-}
