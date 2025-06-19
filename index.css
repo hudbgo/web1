@@ -58,15 +58,13 @@ body.index .section {
   color: white;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
-
+/* Elimina subrayado en enlaces del nav solo en index */
 body.index nav a {
-  color: white;
-  text-decoration: none; /* Añade esto */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  text-decoration: none !important;
 }
 
-body.index nav a:hover {
-  color: #ddd;
-  text-decoration: none; /* Esto asegura que no aparezca subrayado al hacer hover */
+/* También al hacer hover o focus */
+body.index nav a:hover,
+body.index nav a:focus {
+  text-decoration: none !important;
 }
-
