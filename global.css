@@ -1,4 +1,4 @@
-/* ====== RESET ====== */
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -11,13 +11,13 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: transparent;
+  background-color: #fff;
   color: #111;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* ====== HEADER ====== */
+/* ========== HEADER ========== */
 header {
   width: 100%;
   padding: 1.5rem 2rem;
@@ -36,17 +36,15 @@ header {
   font-weight: 600;
 }
 
-/* ====== NAV ====== */
+/* Nav escritorio */
 nav {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
 
-nav a,
-nav a:visited,
-nav a:focus,
-nav a:active {
+/* Links nav */
+nav a {
   text-decoration: none;
   color: #111;
   font-weight: 500;
@@ -57,7 +55,7 @@ nav a:hover {
   color: #555;
 }
 
-/* ====== HAMBURGUER ====== */
+/* ========== BOTÓN HAMBURGUESA ========== */
 .menu-toggle {
   display: none;
   width: 30px;
@@ -76,7 +74,7 @@ nav a:hover {
   left: 0;
   transition: all 0.3s ease;
   border-radius: 2px;
-  background-color: #111;
+  background-color: #111; /* color negro por defecto */
 }
 
 .menu-toggle span:nth-child(1) { top: 0; }
@@ -95,7 +93,7 @@ nav a:hover {
   top: 10px;
 }
 
-/* ====== SECTIONS ====== */
+/* ========== SECTIONS GENERALES ========== */
 .section {
   max-width: 1100px;
   padding: 4rem 2rem;
@@ -113,7 +111,25 @@ nav a:hover {
   color: #444;
 }
 
-/* ====== FOOTER ====== */
+/* ========== BLOQUES DE SERVICIO (BASE) ========== */
+.service-block {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.service-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-block p {
+  color: #444;
+}
+
+/* ========== FOOTER ========== */
 footer {
   border-top: 1px solid #ddd;
   text-align: center;
@@ -123,67 +139,101 @@ footer {
   margin-top: 4rem;
 }
 
-/* ====== FONTS ====== */
-@font-face {
-  font-family: 'Tan Pearl';
-  src: url('fonts/TanPearl.otf') format('opentype');
+/* ========== FORMULARIO DE CONTACTO (BASE) ========== */
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 2rem auto 0;
+  max-width: 700px;
 }
 
-/* ====== MOBILE MENU ====== */
-@media (max-width: 768px) {
-  header {
-    position: relative;
-  }
+.formulario-contacto label {
+  font-weight: 600;
+}
 
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.formulario-contacto textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.formulario-contacto button {
+  padding: 0.9rem 1rem;
+  background-color: #111;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: #333;
+}
+
+/* ========== RESPONSIVE (BASE) ========== */
+@media (max-width: 768px) {
   nav {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
     position: absolute;
     top: 100%;
-    right: 1.5rem;
+    right: 0;
     width: 220px;
-    max-height: 80vh;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.3s ease;
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 1rem;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    z-index: 999;
-    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    padding: 1rem 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1001;
   }
 
   nav.open {
-    transform: scaleY(1);
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   nav a {
-    font-size: 1.1rem;
+    margin: 0.8rem 1.5rem;
+    color: #eee;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ddd;
   }
 
   .menu-toggle {
     display: block;
   }
+
+  .formulario-contacto {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 3rem 1.2rem;
+  }
 }
 
-/* ====== INDEX PAGE STYLING ====== */
-body.index nav {
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  border: none;
-  box-shadow: none;
-}
-
-body.index nav a,
-body.index nav a:visited,
-body.index nav a:focus,
-body.index nav a:active {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-
-body.index .menu-toggle span {
-  background-color: #fff !important;
+/* ========== FUENTE PERSONALIZADA ========== */
+@font-face {
+  font-family: 'Tan Pearl';
+  src: url('fonts/TanPearl.otf') format('opentype');
 }
