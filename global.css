@@ -54,7 +54,7 @@ nav a:hover {
   color: #555;
 }
 
-/* ====== HAMBURGUER BUTTON ====== */
+/* ====== HAMBURGUER ====== */
 .menu-toggle {
   display: none;
   width: 30px;
@@ -126,16 +126,15 @@ footer {
   src: url('fonts/TanPearl.otf') format('opentype');
 }
 
-/* ====== RESPONSIVE NAV (MOBILE) ====== */
 @media (max-width: 768px) {
   header {
-    position: relative;
+    position: relative; /* importante para que el nav se posicione respecto al header */
   }
 
   nav {
     position: absolute;
-    top: 100%;
-    right: 1.5rem;
+    top: 100%; /* justo debajo del header */
+    right: 1.5rem; /* alineado con el botón */
     width: 220px;
     max-height: 80vh;
     background-color: rgba(255, 255, 255, 0.95);
@@ -158,7 +157,6 @@ footer {
 
   nav a {
     font-size: 1.1rem;
-    color: #111;
   }
 
   .menu-toggle {
@@ -166,16 +164,15 @@ footer {
   }
 }
 
-/* ====== DARK MENU IN INDEX ====== */
 body.index nav {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: blur(10px);
 }
 
 body.index nav a {
-  color: #fff;
+  color: #fff !important;
 }
 
 body.index .menu-toggle span {
-  background-color: #fff;
+  background-color: #fff !important;
 }
