@@ -170,8 +170,10 @@ footer {
 
 /* ====== INDEX PAGE STYLING ====== */
 body.index nav {
-  background-color: rgba(0, 0, 0, 0.85) !important;
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: none;
 }
 
 body.index nav a,
