@@ -1,0 +1,51 @@
+#contacto {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+#contacto p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-contacto label {
+  text-align: left;
+  font-weight: 600;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.formulario-contacto button {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: #333;
+}
