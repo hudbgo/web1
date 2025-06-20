@@ -1,27 +1,20 @@
-body, html {
+/* Fondo de pantalla fijo */
+body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  height: 100%;
   font-family: 'Inter', sans-serif;
-}
-
-/* Fondo con clase hero */
-.hero {
-  background: url('img/fondoindex.png') no-repeat center center;
+  background: url('img/fondoindex.png') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-position 0.2s ease;
-  width: 120%;
 }
 
 /* Contenedor del mensaje */
 .gracias-container {
-  .gracias-container {
-  background-color: rgba(50, 50, 50, 0.5);
+  background-color: rgba(255, 255, 255, 0.88);
   padding: 3rem 2rem;
   border-radius: 12px;
   text-align: center;
