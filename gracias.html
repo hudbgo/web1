@@ -10,36 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hero">
-    <div class="gracias-container">
-      <h1>¡Gracias por tu mensaje!</h1>
-      <p>Me pondré en contacto contigo lo antes posible.</p>
-      <a href="index.html">Volver al inicio</a>
-    </div>
+  <div class="gracias-container">
+    <h1>¡Gracias por tu mensaje!</h1>
+    <p>Me pondré en contacto contigo lo antes posible.</p>
+    <a href="index.html">Volver al inicio</a>
   </div>
-
-  <script>
-    // Efecto de desplazamiento suave del fondo según movimiento del ratón
-    const hero = document.querySelector('.hero');
-    let timeout;
-
-    window.addEventListener('mousemove', (e) => {
-      clearTimeout(timeout);
-
-      const x = e.clientX;
-      const y = e.clientY;
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      const moveX = (x / width - 0.5) * 60;
-      const moveY = (y / height - 0.5) * 60;
-
-      hero.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
-
-      timeout = setTimeout(() => {
-        hero.style.backgroundPosition = 'center center';
-      }, 100);
-    });
-  </script>
 </body>
 </html>
