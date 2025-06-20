@@ -1,15 +1,20 @@
-/* Fondo de pantalla fijo */
-body {
+body, html {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  height: 100%;
   font-family: 'Inter', sans-serif;
-  background: url('img/fondoindex.png') no-repeat center center fixed;
+}
+
+/* Fondo con clase hero */
+.hero {
+  background: url('fondo.jpg') no-repeat center center;
   background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-position 0.2s ease;
 }
 
 /* Contenedor del mensaje */
