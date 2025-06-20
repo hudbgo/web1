@@ -1,60 +1,54 @@
-body.index {
-  background-color: #000;
-  color: white;
+/* Fondo de pantalla fijo */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   font-family: 'Inter', sans-serif;
-}
-
-body.index header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-bottom: none;
-}
-
-body.index .logo,
-body.index nav a {
-  color: white;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-}
-
-body.index nav a:hover {
-  color: #ddd;
-}
-
-body.index .menu-toggle span {
-  background-color: white;
-}
-
-body.index .hero {
+  background: url('img/fondoindex.png') no-repeat center center fixed;
+  background-size: cover;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del mensaje */
+.gracias-container {
+  background-color: rgba(255, 255, 255, 0.88);
+  padding: 3rem 2rem;
+  border-radius: 12px;
   text-align: center;
-  padding: 0 2rem;
-  user-select: none;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  background-image: url('img/fondoindex.png');
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-}
-
-body.index .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-family: 'Playfair Display', serif;
-}
-
-body.index .hero p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
   max-width: 600px;
-  margin-top: 1rem;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
-body.index .section {
-  padding-top: 7rem;
-  color: white;
-  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+/* Tipografía */
+.gracias-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.gracias-container p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Botón */
+.gracias-container a {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.gracias-container a:hover {
+  background-color: #333;
 }
