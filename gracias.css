@@ -8,7 +8,7 @@ body, html {
 
 /* Fondo con clase hero */
 .hero {
-  background: url('fondo.jpg') no-repeat center center;
+  background: url('fondoindex.png') no-repeat center center;
   background-size: cover;
   height: 100vh;
   display: flex;
