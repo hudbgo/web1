@@ -36,8 +36,6 @@ body.index .hero {
   background-image: url('img/fondoindex.png');
   background-size: 105%;
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Para mantener la imagen fija y lograr paralaje */
   transition: background-position 0.3s ease-out;
   width: 100%;
 }
