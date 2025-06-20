@@ -19,7 +19,8 @@ body, html {
 
 /* Contenedor del mensaje */
 .gracias-container {
-  background-color: rgba(255, 255, 255, 0.88);
+  .gracias-container {
+  background-color: rgba(50, 50, 50, 0.5);
   padding: 3rem 2rem;
   border-radius: 12px;
   text-align: center;
