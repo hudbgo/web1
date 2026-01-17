@@ -33,8 +33,8 @@ body.index .hero {
   padding: 0 2rem;
   user-select: none;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  background-image: url('img/fondoindex.png');
-  background-size: 105%;
+  background-image: url('img/fondoindex.png') no-repeat center center fixed;
+  background-size: cover;
   background-position: center;
   transition: background-position 0.3s ease-out;
   width: 100%;
