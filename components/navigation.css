@@ -1,0 +1,33 @@
+.navigation-container1 {
+  display: contents;
+}
+ 
+.navigation-container2 {
+  flex: 0 0 auto;
+  width: 40px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.navigation-image {
+  width: 200px;
+  object-fit: cover;
+}
+ 
+.navigation-thq-navigation-brand-elm2 {
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+}
+ 
+.navigation-container3 {
+  display: none;
+}
+ 
+.navigation-container4 {
+  display: contents;
+}
+ 
+.navigationroot-class-name {
+  backdrop-filter: blur(5px);
+}
+
