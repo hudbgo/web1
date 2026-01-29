@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>xxxxxxxxx | Millan&Co Cybersecurity</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="xxxxxxxxxxxxxxx" />
+
+    <!-- RESET (idéntico al index) -->
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
+
+    <!-- DEFAULT -->
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Inter;
+            font-size: 1rem;
+        }
+
+        body {
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--color-on-surface);
+            background: var(--color-surface);
+            fill: var(--color-on-surface);
+        }
+    </style>
+
+    <!-- FONTS -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+
+    <!-- CSS GLOBAL (LOS TUYOS) -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./services.css" />
+</head>
+
+<body>
+
+    <!-- 🔒 TU NAV REAL (CARGADO, NO COPIADO) -->
+    <div id="navigation"></div>
+
+    <!-- HERO (MISMA ALTURA QUE INDEX) -->
+    <navigation-wrapper class="navigation-wrapper" rootclassname="navigationundefined">
+        <!--Navigation component-->
+        <div class="navigation-container1 navigationroot-class-name">
+            <nav class="navigation-wrapper">
+                <div class="navigation-container">
+                    <a href="index.html">
+                        <div aria-label="Millan&amp;Co Home" class="navigation-brand">
+                            <div class="navigation-container2">
+                                <img alt="image" src="public/logosinfondo-200h.png" class="navigation-image" />
+                            </div>
+                        </div>
+                    </a>
+                    <div class="navigation-desktop-menu">
+                        <div class="navigation-menu-item">
+                            <a href="services.html">
+                                <div class="navigation-link"><span>Services</span></div>
+                            </a>
+                        </div>
+                        <div class="has-dropdown navigation-menu-item">
+                            <button aria-expanded="false" aria-haspopup="true" class="navigation-link dropdown-trigger">
+                                <span>Compliance</span>
+                                <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                    class="dropdown-chevron">
+                                    <path d="m6 9l6 6l6-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                            <div class="navigation-dropdown">
+                                <a href="#sgsi">
+                                    <div class="navigation-dropdown-link">
+                                        <span>SGSI Implementation</span>
+                                    </div>
+                                </a>
+                                <a href="#legal">
+                                    <div class="navigation-dropdown-link">
+                                        <span>Legal Compliance</span>
+                                    </div>
+                                </a>
+                                <a href="#audit">
+                                    <div class="navigation-dropdown-link">
+                                        <span>Security Audits</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="navigation-menu-item">
+                            <a href="aboutus.html">
+                                <div class="navigation-link"><span>About Us</span></div>
+                            </a>
+                        </div>
+                        <div class="navigation-menu-item">
+                            <a href="contact.html">
+                                <div class="btn-sm btn btn-primary">
+                                    <span>Secure Portal</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <button id="navigation-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false"
+                        class="navigation-mobile-toggle">
+                        <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                            class="icon-menu">
+                            <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg><svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                            class="icon-close">
+                            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="3" rx="2" width="18" height="18"></rect>
+                                <path d="M15 3v18M8 9l3 3l-3 3"></path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+            <div id="navigation-mobile-overlay" aria-hidden="true" class="navigation-mobile-overlay">
+                <div class="navigation-mobile-header">
+                    <a href="index.html">
+                        <div></div>
+                    </a>
+                </div>
+                <div class="navigation-mobile-content">
+                    <ul class="navigation-mobile-list"></ul>
+                </div>
+            </div>
+            <div class="navigation-container3">
+                <div class="navigation-container4">
+                    <script defer="" data-name="navigation-logic">
+                        document.addEventListener('DOMContentLoaded', function () {
+                            (function () {
+                                const mobileToggle = document.getElementById("navigation-mobile-toggle")
+                                const mobileOverlay = document.getElementById("navigation-mobile-overlay")
+                                const body = document.body
+
+                                function toggleMenu() {
+                                    const isExpanded = mobileToggle.getAttribute("aria-expanded") === "true"
+                                    mobileToggle.setAttribute("aria-expanded", !isExpanded)
+                                    mobileOverlay.setAttribute("aria-hidden", isExpanded)
+
+                                    if (!isExpanded) {
+                                        body.style.overflow = "hidden"
+                                    } else {
+                                        body.style.overflow = ""
+                                    }
+                                }
+
+                                mobileToggle.addEventListener("click", toggleMenu)
+
+                                const mobileLinks = mobileOverlay.querySelectorAll("a:not(.navigation-mobile-sublink), .navigation-mobile-sublink")
+                                mobileLinks.forEach((link) => {
+                                    link.addEventListener("click", () => {
+                                        if (mobileToggle.getAttribute("aria-expanded") === "true") {
+                                            toggleMenu()
+                                        }
+                                    })
+                                })
+
+                                let lastScroll = 0
+                                const navWrapper = document.querySelector(".navigation-wrapper")
+
+                                window.addEventListener("scroll", () => {
+                                    const currentScroll = window.pageYOffset
+
+                                    if (currentScroll <= 0) {
+                                        navWrapper.style.boxShadow = "none"
+                                        navWrapper.style.padding = "0"
+                                        return
+                                    }
+
+                                    if (currentScroll > lastScroll && currentScroll > 100) {
+                                        navWrapper.style.transform = "translateY(-100%)"
+                                    } else {
+                                        navWrapper.style.transform = "translateY(0)"
+                                        navWrapper.style.boxShadow = "0 10px 30px -10px rgba(0,0,0,0.1)"
+                                    }
+
+                                    lastScroll = currentScroll
+                                })
+                            })()
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </navigation-wrapper>
+    <section class="services-section">
+        <div class="services-container">
+          <div class="services-header">
+            <h2 class="section-title">Specialized Protection</h2>
+            <p class="section-subtitle">
+              Precision-engineered security frameworks.
+            </p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon-box">
+                <svg fill="none" width="32" xmlns="http://www.w3.org/2000/svg" height="32" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="service-title">SGSI for SMEs</h3>
+              <p class="section-content">
+                Comprehensive Information Security Management Systems scaled
+                for growing businesses.
+              </p>
+              <details class="service-details">
+                <summary class="btn-link"><span>Learn More</span></summary>
+                <div class="details-content">
+                  <ul class="details-list">
+                    <li><span>ISO 27001 Alignment</span></li>
+                    <li><span>Risk Assessment &amp; Mitigation</span></li>
+                    <li><span>Employee Security Training</span></li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-box">
+                <svg fill="none" width="32" xmlns="http://www.w3.org/2000/svg" height="32" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                    </path>
+                    <path d="M6.376 18.91a6 6 0 0 1 11.249.003"></path>
+                    <circle r="4" cx="12" cy="11"></circle>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="service-title">Personal SGSI</h3>
+              <p class="section-content">
+                Privacy-first security strategies for high-net-worth
+                individuals and digital professionals.
+              </p>
+              <details class="service-details">
+                <summary class="btn-link"><span>Learn More</span></summary>
+                <div class="details-content">
+                  <ul class="details-list">
+                    <li><span>Identity Theft Protection</span></li>
+                    <li><span>Secure Asset Management</span></li>
+                    <li><span>Home Network Hardening</span></li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-box">
+                <svg fill="none" width="32" xmlns="http://www.w3.org/2000/svg" height="32" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z">
+                    </path>
+                    <path d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"></path>
+                  </g>
+                </svg>
+              </div>
+              <h3 class="service-title">Legal Compliance</h3>
+              <p class="section-content">
+                Navigating GDPR, DORA, and local regulations with surgical
+                legal precision.
+              </p>
+              <details class="service-details">
+                <summary class="btn-link"><span>Learn More</span></summary>
+                <div class="details-content">
+                  <ul class="details-list">
+                    <li><span>Regulatory Audits</span></li>
+                    <li><span>Compliance Roadmaps</span></li>
+                    <li><span>Legal Liability Reduction</span></li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer-wrapper class="footer-wrapper">
+        <!--Footer component-->
+        <div class="footer-container1">
+            <div class="footer-container2">
+                <div class="footer-container3">
+                    <style>
+                        @media (prefers-reduced-motion: no-preference) {
+                            .footer-logo-icon {
+                                animation: pulseShield 4s infinite ease-in-out;
+                            }
+                        }
+                    </style>
+                </div>
+            </div>
+            <footer class="footer-wrapper">
+                <div class="footer-thq-footer-container-elm footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-brand footer-column">
+                            <div class="footer-logo-group">
+                                <img alt="image" src="public/logosinfondo-700h.png" class="footer-image" />
+                            </div>
+                            <p class="footer-description section-content">
+                                Securing the future of SMEs and individuals through
+                                world-class ISMS implementation and rigorous legal
+                                compliance.
+                            </p>
+                            <div class="footer-socials">
+                                <a href="#">
+                                    <div aria-label="LinkedIn" class="footer-social-link">
+                                        <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24"
+                                            viewBox="0 0 24 24">
+                                            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z">
+                                                </path>
+                                                <circle r="2" cx="4" cy="4"></circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div aria-label="Twitter" class="footer-social-link">
+                                        <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6c2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4c-.9-4.2 4-6.6 7-3.8c1.1 0 3-1.2 3-1.2"
+                                                fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div aria-label="Email" class="footer-social-link">
+                                        <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24"
+                                            viewBox="0 0 24 24">
+                                            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                                                <rect x="2" y="4" rx="2" width="20" height="16"></rect>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-nav footer-column">
+                            <h3 class="footer-heading section-subtitle">Expertise</h3>
+                            <ul class="footer-link-list">
+                                <li class="footer-link-item">
+                                    <a href="#">
+                                        <div class="footer-link">
+                                            <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path d="m9 18l6-6l-6-6" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                </path>
+                                            </svg>
+                                            <span>SGSI / ISMS Strategy</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">
+                                        <div class="footer-link">
+                                            <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path d="m9 18l6-6l-6-6" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                </path>
+                                            </svg>
+                                            <span>Legal Compliance Audit</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">
+                                        <div class="footer-link">
+                                            <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path d="m9 18l6-6l-6-6" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                </path>
+                                            </svg>
+                                            <span>Private Data Defense</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">
+                                        <div class="footer-link">
+                                            <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path d="m9 18l6-6l-6-6" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                </path>
+                                            </svg>
+                                            <span>SME Cybersecurity</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-contact footer-column">
+                            <h3 class="footer-heading section-subtitle">
+                                Get in Touch
+                            </h3>
+                            <p class="footer-contact-text section-content">
+                                Ready to fortify your digital infrastructure? Our
+                                consultants are available for a private assessment.
+                            </p>
+                            <div class="footer-cta-group">
+                                <a href="contact.html">
+                                    <div class="btn footer-cta-btn btn-primary">
+                                        <span>Start Assessment</span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="btn-outline btn footer-cta-btn">
+                                        <span>Legal Notice</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-details-area">
+                        <details class="footer-accordion">
+                            <summary class="footer-accordion-header">
+                                <span>Global Compliance Standards</span>
+                                <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                    class="footer-accordion-icon">
+                                    <path d="m9 18l6-6l-6-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </summary>
+                            <div class="footer-accordion-content">
+                                <p class="section-content">
+                                    We operate under the highest international frameworks
+                                    including ISO/IEC 27001, GDPR, and NIST. Our methodology
+                                    ensures that your business not only meets current
+                                    regulations but is prepared for the evolving legislative
+                                    landscape of 2026 and beyond.
+                                </p>
+                            </div>
+                        </details>
+                        <details class="footer-accordion">
+                            <summary class="footer-accordion-header">
+                                <span>Our Commitment to Privacy</span>
+                                <svg width="24" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                    class="footer-accordion-icon">
+                                    <path d="m9 18l6-6l-6-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </summary>
+                            <div class="footer-accordion-content">
+                                <p class="section-content">
+                                    At Millan&amp;Co, confidentiality is our cornerstone. We
+                                    employ zero-trust principles in every engagement,
+                                    ensuring that your sensitive corporate data remains
+                                    encrypted and inaccessible to unauthorized parties at
+                                    all times.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="footer-copyright">
+                            <span>
+                                © 2026 Millan&amp;Co Cybersecurity. All rights reserved.
+                            </span>
+                        </div>
+                        <div class="footer-legal-links">
+                            <a href="#">
+                                <div class="footer-legal-link">
+                                    <span>Privacy Policy</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="footer-legal-link">
+                                    <span>Terms of Service</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="footer-legal-link"><span>Cookies</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="footer-container4">
+                <div class="footer-container5">
+                    <style>
+                        @keyframes slideDown {
+                            from {
+                                opacity: 0;
+                                transform: translateY(-10px);
+                            }
+
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+                    </style>
+                </div>
+            </div>
+            <div class="footer-container6">
+                <div class="footer-container7">
+                    <script defer="" data-name="footer-interactivity">
+                        document.addEventListener('DOMContentLoaded', function () {
+                            (function () {
+                                // Minimal JS for handling accordion mutual exclusivity if desired
+                                // though native <details> is used for accessibility as per instructions.
+
+                                const footerAccordions = document.querySelectorAll(".footer-accordion")
+
+                                footerAccordions.forEach((accordion) => {
+                                    accordion.addEventListener("toggle", (e) => {
+                                        if (accordion.open) {
+                                            footerAccordions.forEach((other) => {
+                                                if (other !== accordion && other.open) {
+                                                    other.open = false
+                                                }
+                                            })
+                                        }
+                                    })
+                                })
+
+                                // Simple scroll reveal for footer elements
+                                const observerOptions = {
+                                    threshold: 0.1,
+                                    rootMargin: "0px",
+                                }
+
+                                const footerObserver = new IntersectionObserver((entries) => {
+                                    entries.forEach((entry) => {
+                                        if (entry.isIntersecting) {
+                                            entry.target.style.opacity = "1"
+                                            entry.target.style.transform = "translateY(0)"
+                                            footerObserver.unobserve(entry.target)
+                                        }
+                                    })
+                                }, observerOptions)
+
+                                document.querySelectorAll(".footer-column").forEach((col, index) => {
+                                    col.style.opacity = "0"
+                                    col.style.transform = "translateY(30px)"
+                                    col.style.transition = `all 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s`
+                                    footerObserver.observe(col)
+                                })
+                            })()
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </footer-wrapper>
+
+    <!-- ✅ CARGA CORRECTA DEL NAV -->
+    <script>
+        fetch("./components/navigation.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("navigation").innerHTML = html;
+            });
+    </script>
+
+</body>
+
+</html>
