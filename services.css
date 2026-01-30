@@ -1,0 +1,13 @@
+.services-section.services-dark {
+  background-color: var(--grayscale-dark); /* azul del index */
+  padding: 6rem 0;
+}
+
+.services-section.services-dark * {
+  color: #ffffff;
+}
+
+.services-section.services-dark .service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

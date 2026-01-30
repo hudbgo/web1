@@ -1,0 +1,67 @@
+/* =====================================================
+   ABOUT US – OVERRIDE DEFINITIVO DE ABOUT-BENTO
+   ===================================================== */
+
+/* 🔥 MATA EL ROSA DE ABOUT-BENTO */
+.about-bento {
+  background-color: var(--grayscale-dark) !important;
+  background-image: none !important;
+}
+
+/* si about-bento hereda de bento */
+.bento.about-bento {
+  background-color: #0a1f44 !important;
+}
+
+/* ---------- MODO OSCURO (RESPETA TU SISTEMA) ---------- */
+
+.about-bento.dark,
+.about-bento.dark p,
+.about-bento.dark h1,
+.about-bento.dark h2,
+.about-bento.dark h3 {
+  color: #ffffff;
+}
+
+/* ---------- CONTENIDO ABOUT ---------- */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.about-text {
+  max-width: 680px;
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+.about-highlight {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--blue-accent, #1e4fd8);
+  opacity: 0.95;
+}
+
+/* ---------- IMAGEN ---------- */
+
+.about-image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
