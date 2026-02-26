@@ -1,53 +1,54 @@
-:root {
-  --primary: #0a1f44;
-  --accent: #1e4fd8;
-  --bg: #f5f7fb;
-  --text: #0f172a;
-}
-
+/* Fondo de pantalla fijo */
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: linear-gradient(135deg, #0a1f44, #102a63);
-  color: #fff;
-}
-
-.thanks-wrapper {
-  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background: url('img/fondogracias.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Contenedor del mensaje */
+.gracias-container {
+  background-color: rgba(255, 255, 255, 0.88);
+  padding: 3rem 2rem;
+  border-radius: 12px;
   text-align: center;
-  padding: 2rem;
-}
-
-.thanks-box {
   max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
-.thanks-box h1 {
-  font-size: 3rem;
+/* Tipografía */
+.gracias-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #000;
 }
 
-.thanks-box p {
-  font-size: 1.1rem;
-  opacity: 0.85;
-  margin-bottom: 2.5rem;
+.gracias-container p {
+  font-size: 1.2rem;
+  color: #333;
 }
 
-.thanks-box a {
+/* Botón */
+.gracias-container a {
   display: inline-block;
-  padding: 0.9rem 2.2rem;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--primary);
-  font-weight: 600;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #000;
+  color: #fff;
   text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.thanks-box a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+.gracias-container a:hover {
+  background-color: #333;
 }
