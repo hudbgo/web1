@@ -1,0 +1,195 @@
+/* ─────────────────────────────────────────────────────────
+   TESTA — Animations
+   ───────────────────────────────────────────────────────── */
+
+/* ═══════════════════════════════
+   Entrance states
+   ═══════════════════════════════ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+}
+[data-reveal="fade"] {
+  transform: translateY(0);
+}
+[data-reveal="left"] {
+  transform: translateX(-32px);
+}
+[data-reveal="right"] {
+  transform: translateX(32px);
+}
+[data-reveal="scale"] {
+  transform: scale(0.94);
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger delays */
+[data-delay="100"] { transition-delay: 0.1s; }
+[data-delay="150"] { transition-delay: 0.15s; }
+[data-delay="200"] { transition-delay: 0.2s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="400"] { transition-delay: 0.4s; }
+[data-delay="500"] { transition-delay: 0.5s; }
+[data-delay="600"] { transition-delay: 0.6s; }
+[data-delay="700"] { transition-delay: 0.7s; }
+[data-delay="800"] { transition-delay: 0.8s; }
+
+/* ═══════════════════════════════
+   Page load hero animation
+   ═══════════════════════════════ */
+.hero-animate-1 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroEnter 0.8s var(--ease-out) 0.1s forwards;
+}
+.hero-animate-2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroEnter 0.8s var(--ease-out) 0.25s forwards;
+}
+.hero-animate-3 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroEnter 0.8s var(--ease-out) 0.4s forwards;
+}
+.hero-animate-4 {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroEnter 0.7s var(--ease-out) 0.55s forwards;
+}
+.hero-animate-5 {
+  opacity: 0;
+  animation: heroEnter 0.7s var(--ease-out) 0.9s forwards;
+}
+
+@keyframes heroEnter {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════
+   Floating metrics cards
+   ═══════════════════════════════ */
+.float-1 { animation: floatA 6s ease-in-out infinite; }
+.float-2 { animation: floatB 7s ease-in-out 1s infinite; }
+.float-3 { animation: floatA 5.5s ease-in-out 2s infinite; }
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translateY(-4px); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ═══════════════════════════════
+   Gradient orbs animation
+   ═══════════════════════════════ */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+.orb-1 {
+  width: 640px; height: 640px;
+  background: rgba(196, 218, 242, 0.5);
+  top: -200px; right: -100px;
+  animation: orbDrift1 18s ease-in-out infinite;
+}
+.orb-2 {
+  width: 420px; height: 420px;
+  background: rgba(224,92,46,0.07);
+  bottom: 0; left: -100px;
+  animation: orbDrift2 14s ease-in-out 3s infinite;
+}
+.orb-3 {
+  width: 300px; height: 300px;
+  background: rgba(196,218,242,0.35);
+  bottom: 100px; right: 20%;
+  animation: orbDrift1 20s ease-in-out 6s infinite;
+}
+
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(40px, 30px) scale(1.05); }
+  66%       { transform: translate(-20px, 50px) scale(0.96); }
+}
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(30px, -40px) scale(1.08); }
+}
+
+/* ═══════════════════════════════
+   Horizontal ticker
+   ═══════════════════════════════ */
+.ticker-wrap {
+  overflow: hidden;
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 14px 0;
+  background: var(--paper-2);
+  white-space: nowrap;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 0;
+  animation: ticker 28s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 24px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.ticker-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--coral);
+  flex-shrink: 0;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════
+   Hover link arrow
+   ═══════════════════════════════ */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: gap 0.2s var(--ease-spring);
+}
+.link-arrow:hover { gap: 10px; }
+.link-arrow::after { content: '→'; }
+
+/* ═══════════════════════════════
+   Page transitions
+   ═══════════════════════════════ */
+.page-enter {
+  opacity: 0;
+  animation: pageIn 0.5s var(--ease-out) forwards;
+}
+@keyframes pageIn {
+  to { opacity: 1; }
+}
+

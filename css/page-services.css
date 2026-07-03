@@ -1,0 +1,96 @@
+/* ─────────────────────────────────────────────────────────
+   TESTA — Page: Services
+   ───────────────────────────────────────────────────────── */
+
+/* ═══════════════════════════════
+   HERO
+   ═══════════════════════════════ */
+.services-hero {
+  padding: 160px 0 64px;
+  background: var(--paper);
+}
+.services-quicknav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+}
+.services-quicknav .chip {
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.services-quicknav .chip:hover {
+  border-color: var(--coral-mid);
+  color: var(--coral-dark);
+  background: var(--coral-light);
+}
+
+/* ═══════════════════════════════
+   SERVICE BLOCKS (Gap / Mantenimiento)
+   ═══════════════════════════════ */
+.servicio-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+}
+.servicio-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 24px 0 28px;
+}
+.servicio-meta-item strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.servicio-detail .accordion-body__grid {
+  margin-top: 0;
+}
+
+/* ═══════════════════════════════
+   COMPARISON TABLE
+   ═══════════════════════════════ */
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--r-lg);
+}
+.compare-table {
+  border: 0.5px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--white);
+  min-width: 620px;
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.8fr;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 0.5px solid var(--border);
+  align-items: center;
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-row--head {
+  background: var(--paper-2);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.compare-row:not(.compare-row--head) div { font-size: 14px; color: var(--ink-2); }
+.compare-row:not(.compare-row--head) div:first-child { font-weight: 500; color: var(--ink); }
+
+/* ═══════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════ */
+@media (max-width: 900px) {
+  .servicio-layout { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 768px) {
+  .services-hero { padding: 120px 0 48px; }
+}

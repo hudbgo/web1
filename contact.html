@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicita tu evaluación inicial. Te respondemos en menos de 48 horas con los siguientes pasos para tu SGSI o Plan Director de Seguridad.">
+  <title>Contacto — Testa</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/page-contact.css">
+</head>
+<body class="page-enter">
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+     ════════════════════════════════════════ -->
+<nav class="nav">
+  <a href="index.html" class="nav__logo">Testa<span class="nav__logo-dot">.</span></a>
+
+  <button class="nav__hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav__mobile">
+  <a href="services.html">Servicios</a>
+  <a href="index.html#proceso">Método</a>
+  <a href="index.html#demo">Entregables</a>
+  <a href="index.html#para-quien">Para quién</a>
+  <a href="index.html#sobre-mi">Sobre mí</a>
+  <a href="index.html#faq">FAQ</a>
+  <a href="#formulario" style="color: var(--coral)">Solicitar evaluación →</a>
+</div>
+
+<!-- ════════════════════════════════════════
+     CONTACTO — hero + formulario
+     ════════════════════════════════════════ -->
+<section id="formulario" class="contact-hero">
+  <div class="form-orb-1"></div>
+  <div class="form-orb-2"></div>
+  <div class="container">
+    <div class="t-label hero-animate-1">Contacto</div>
+    <h1 class="t-display-lg hero-animate-2" style="margin-top: 14px; max-width: 640px">
+      Hablemos de<br><em>tu proyecto.</em>
+    </h1>
+    <p class="t-body-xl hero-animate-3 section-intro" style="max-width: 480px; margin-bottom: 64px">
+      Cuéntanos tu situación actual. Respondemos en menos de 48 horas laborables con los siguientes pasos.
+    </p>
+
+    <div class="contact-grid">
+
+      <div class="contact-form-card" data-reveal>
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="nombre">Nombre completo</label>
+              <input class="form-input" type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="empresa">Empresa</label>
+              <input class="form-input" type="text" id="empresa" name="empresa" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="telefono">Teléfono (opcional)</label>
+              <input class="form-input" type="tel" id="telefono" name="telefono">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="servicio">Servicio de interés</label>
+            <select class="form-select" id="servicio" name="servicio">
+              <option value="">Selecciona una opción</option>
+              <option value="sgsi">SGSI completo</option>
+              <option value="pds">Plan Director de Seguridad</option>
+              <option value="gap">Gap Assessment</option>
+              <option value="otro">No estoy seguro</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0">
+            <label class="form-label" for="mensaje">Cuéntanos tu situación</label>
+            <textarea class="form-textarea" id="mensaje" name="mensaje" required placeholder="¿Qué problema quieres resolver? ¿Tenéis algún plazo u obligación normativa?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn--lg" style="margin-top: 28px">Enviar mensaje</button>
+          <p class="form-hint">Al enviar este formulario aceptas que te contactemos para responder a tu consulta.</p>
+        </form>
+      </div>
+
+      <aside class="contact-info" data-reveal data-delay="150">
+        <div class="contact-info-card">
+          <div class="t-label-muted" style="margin-bottom: 14px">Contacto directo</div>
+          <a href="mailto:hola@testa.es" class="contact-direct">hola@testa.es</a>
+        </div>
+        <div class="contact-info-card">
+          <div class="t-label-muted" style="margin-bottom: 14px">Qué pasa después</div>
+          <div class="contact-step"><div class="step-num">1</div><div>Recibimos tu mensaje y lo revisamos</div></div>
+          <div class="contact-step"><div class="step-num">2</div><div>Respondemos en menos de 48h laborables</div></div>
+          <div class="contact-step"><div class="step-num">3</div><div>Reunión inicial sin compromiso</div></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="footer__logo">Testa<span>.</span></a>
+        <p class="footer__tagline">Consultoría especializada en implantación de SGSI y ciberseguridad B2B.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="services.html#sgsi">SGSI completo</a></li>
+          <li><a href="services.html#pds">Plan Director de Seguridad</a></li>
+          <li><a href="services.html#gap">Gap Assessment</a></li>
+          <li><a href="services.html#mantenimiento">Mantenimiento</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Proceso</h4>
+        <ul>
+          <li><a href="index.html#proceso">Metodología</a></li>
+          <li><a href="index.html#demo">Entregables</a></li>
+          <li><a href="index.html#para-quien">Para quién</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="mailto:hola@testa.es">hola@testa.es</a></li>
+          <li><a href="#formulario">Evaluación gratuita</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Testa. Consultoría de ciberseguridad B2B.</span>
+      <span>ISO 27001 · ENS · RGPD · DORA</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<!-- ════════════════════════════════════════
+     PREFILL FROM SERVICES FLOW
+     ════════════════════════════════════════ -->
+<script>
+(function prefillFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service');
+  const certs = params.get('certs');
+  if (!service && !certs) return;
+
+  const select = document.getElementById('servicio');
+  const textarea = document.getElementById('mensaje');
+
+  if (service && select) {
+    const validValues = Array.from(select.options).map(o => o.value);
+    if (validValues.includes(service)) select.value = service;
+  }
+
+  if (certs && textarea) {
+    const certList = certs.split(',').map(c => c.trim()).filter(Boolean);
+    if (certList.length) {
+      const certText = `Estoy interesado/a en implantar un SGSI con foco en las siguientes certificaciones o marcos: ${certList.join(', ')}.`;
+      textarea.value = textarea.value ? `${certText}\n\n${textarea.value}` : certText;
+    }
+  }
+})();
+</script>
+</body>
+</html>
