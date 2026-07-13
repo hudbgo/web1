@@ -1,4 +1,4 @@
-# Testa — Sitio web de consultoría de ciberseguridad
+# M&Co — Sitio web de consultoría de ciberseguridad
 
 ## Estructura del proyecto
 
