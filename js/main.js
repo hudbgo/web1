@@ -153,7 +153,7 @@
 
     setTimeout(() => {
       btn.textContent = '✓ Mensaje enviado';
-      btn.style.background = '#2d7a4a';
+      btn.style.background = '#2fae7c';
       form.reset();
       setTimeout(() => {
         btn.textContent = original;

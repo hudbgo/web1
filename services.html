@@ -86,17 +86,18 @@
        PDS / SGSI INTERACTIVE FLOW — self-contained styles
        ════════════════════════════════════════ -->
   <style>
-    .flow-hero { position: relative; overflow: hidden; padding: 152px 0 120px; background: var(--paper); }
+    .flow-hero { position: relative; overflow: hidden; padding: 176px 0 120px; background: var(--bg); }
     .flow-hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 
     .flow-header { position: relative; z-index: 1; text-align: center; max-width: 620px; margin: 0 auto 72px; }
     .flow-header .t-label { justify-content: center; }
-    .flow-jumplinks { margin-top: 26px; display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; font-size: 13px; }
+    .flow-jumplinks { margin-top: 26px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; font-size: 13px; }
     .flow-jumplinks a {
-      color: var(--ink-3); text-decoration: none; border-bottom: 0.5px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
+      color: var(--text-3); text-decoration: none; padding: 7px 15px; border-radius: var(--r-pill);
+      background: var(--surface); border: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
     }
-    .flow-jumplinks a:hover { color: var(--coral-dark); border-color: var(--coral-mid); }
+    .flow-jumplinks a:hover { color: var(--green-soft); border-color: rgba(70,227,166,0.35); background: var(--surface-2); }
 
     .flow-canvas { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
     .flow-connector-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
@@ -108,119 +109,108 @@
 
     .flow-node {
       position: relative;
-      width: 132px; height: 132px;
+      width: 128px; height: 128px;
       border-radius: 50%;
-      background: var(--white);
-      border: 1px solid var(--border-heavy);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
-      cursor: pointer;
-      box-shadow: var(--shadow-md);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+      background: radial-gradient(120% 120% at 30% 22%, rgba(255,255,255,0.16), rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.05));
+      border: 1px solid var(--border-mid);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 20px 50px rgba(0,0,0,0.5);
       transition: transform 0.3s var(--ease-spring), border-color 0.3s, box-shadow 0.3s;
     }
     .flow-node::after {
-      content: '';
-      position: absolute; inset: -1px; border-radius: 50%;
+      content: ''; position: absolute; inset: -1px; border-radius: 50%;
       opacity: 0; animation: flowPing 3.2s ease-out infinite;
     }
-    .flow-node--pds::after   { border: 1px solid var(--green-mid); }
-    .flow-node--sgsi::after  { border: 1px solid var(--blue-mid); animation-delay: 1.1s; }
+    .flow-node--pds::after   { border: 1px solid rgba(70,227,166,0.5); }
+    .flow-node--sgsi::after  { border: 1px solid rgba(56,210,198,0.5); animation-delay: 1.1s; }
     @keyframes flowPing {
-      0%   { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.35); opacity: 0; }
+      0%   { transform: scale(1); opacity: 0.7; }
+      70%  { transform: scale(1.42); opacity: 0; }
+      100% { transform: scale(1.42); opacity: 0; }
     }
-    .flow-node:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .flow-node:hover { transform: translateY(-4px); border-color: var(--border-heavy); }
     .flow-node:active { transform: translateY(-1px) scale(0.98); }
-    .flow-node--pds.is-active  { border-color: var(--green-deep); box-shadow: 0 0 0 1px var(--green-mid), var(--shadow-lg); }
-    .flow-node--sgsi.is-active { border-color: var(--blue-deep);  box-shadow: 0 0 0 1px var(--blue-mid), var(--shadow-lg); }
+    .flow-node--pds.is-active  { border-color: rgba(70,227,166,0.6);  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 0 44px rgba(70,227,166,0.22), 0 20px 50px rgba(0,0,0,0.5); }
+    .flow-node--sgsi.is-active { border-color: rgba(56,210,198,0.6);  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 0 44px rgba(56,210,198,0.22), 0 20px 50px rgba(0,0,0,0.5); }
     .flow-node.is-active::after { display: none; }
 
     .flow-node__icon-wrap {
-      width: 44px; height: 44px; border-radius: 50%;
+      width: 46px; height: 46px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.3s;
     }
-    .flow-node--pds .flow-node__icon-wrap  { background: var(--green-wash); color: var(--green-deep); }
-    .flow-node--sgsi .flow-node__icon-wrap { background: var(--blue-wash);  color: var(--blue-deep); }
-    .flow-node--pds.is-active .flow-node__icon-wrap  { background: var(--green-mid); }
-    .flow-node--sgsi.is-active .flow-node__icon-wrap { background: var(--blue-mid); }
+    .flow-node--pds .flow-node__icon-wrap  { background: rgba(70,227,166,0.12); color: var(--green-deep); border: 1px solid rgba(70,227,166,0.3); }
+    .flow-node--sgsi .flow-node__icon-wrap { background: rgba(56,210,198,0.12); color: var(--blue-deep); border: 1px solid rgba(56,210,198,0.3); }
+    .flow-node--pds.is-active .flow-node__icon-wrap  { background: rgba(70,227,166,0.22); }
+    .flow-node--sgsi.is-active .flow-node__icon-wrap { background: rgba(56,210,198,0.22); }
     .flow-node__icon-wrap svg { width: 20px; height: 20px; stroke: currentColor; }
-    .flow-node__label { font-family: var(--font-body); font-size: 15px; font-weight: 600; color: var(--ink); }
+    .flow-node__label { font-family: var(--font-body); font-size: 15px; font-weight: 600; color: var(--text); }
     .flow-node__chevron {
-      width: 13px; height: 13px; color: var(--ink-4);
+      width: 12px; height: 12px; color: var(--text-3);
       animation: flowChevronBounce 1.8s ease-in-out infinite;
-      transition: transform 0.35s var(--ease-out), color 0.3s;
     }
     .flow-node__chevron svg { width: 100%; height: 100%; stroke: currentColor; }
     @keyframes flowChevronBounce {
-      0%, 100% { transform: translateY(0); opacity: 0.45; }
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
       50%      { transform: translateY(3px); opacity: 1; }
     }
-    .flow-node.is-active .flow-node__chevron { animation: none; opacity: 0.8; transform: rotate(180deg); }
+    .flow-node.is-active .flow-node__chevron { animation: none; opacity: 0.85; transform: rotate(180deg); }
     .flow-node--pds.is-active .flow-node__chevron  { color: var(--green-deep); }
     .flow-node--sgsi.is-active .flow-node__chevron { color: var(--blue-deep); }
-    .flow-root-sub { font-size: 12px; color: var(--ink-3); text-align: center; max-width: 140px; }
+    .flow-root-sub { font-size: 12px; color: var(--text-3); text-align: center; max-width: 140px; }
 
     .flow-panels { position: relative; margin-top: 56px; display: flex; flex-direction: column; align-items: center; }
     .flow-panel {
       width: 100%; max-width: 560px;
-      border: 0.5px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 36px 40px;
-      box-shadow: var(--shadow-sm);
+      padding: 34px 36px;
+      text-align: center;
+      border-radius: var(--r-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
       opacity: 0; transform: translateY(14px);
-      transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+      transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
       pointer-events: none;
     }
     .flow-panel.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .flow-panel[hidden] { display: none; }
-    #panelPds { background: linear-gradient(130deg, var(--green-wash) 0%, var(--white) 55%); }
-    #panelSgsi, #panelCerts, #panelContact { background: linear-gradient(130deg, var(--blue-wash) 0%, var(--white) 55%); }
     .flow-panel h3 { margin-top: 14px; }
-    .flow-panel p  { margin-top: 10px; }
+    .flow-panel p  { margin-top: 10px; color: var(--text-2); }
 
     .flow-vline {
-      width: 1px; height: 36px;
-      background: linear-gradient(180deg, var(--blue-mid), transparent);
+      width: 1px; height: 46px; margin: 4px 0;
+      background: linear-gradient(180deg, rgba(56,210,198,0.7), rgba(56,210,198,0.08));
       transform: scaleY(0); transform-origin: top;
-      transition: transform 0.5s var(--ease-out);
+      transition: transform 0.4s var(--ease-out);
     }
     .flow-vline.is-active { transform: scaleY(1); }
 
-    .flow-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .flow-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; justify-content: center; }
     .flow-chip {
-      padding: 9px 16px; border-radius: var(--r-pill);
-      background: var(--white); border: 0.5px solid var(--border-mid);
-      color: var(--ink-2); font-size: 13px; font-weight: 500; font-family: var(--font-body);
-      cursor: pointer; transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+      padding: 9px 17px; border-radius: var(--r-pill);
+      font-size: 13px; color: var(--text-2);
+      background: var(--surface); border: 1px solid var(--border);
+      transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
     }
-    .flow-chip:hover { border-color: var(--blue-mid); }
-    .flow-chip.is-selected { background: var(--blue-wash); border-color: var(--blue-mid); color: var(--blue-deep); box-shadow: var(--shadow-sm); }
+    .flow-chip:hover { border-color: rgba(56,210,198,0.4); color: var(--blue-deep); }
+    .flow-chip.is-selected {
+      background: rgba(56,210,198,0.14); border-color: rgba(56,210,198,0.5);
+      color: var(--blue-deep); box-shadow: 0 0 18px rgba(56,210,198,0.18);
+    }
 
     @media (max-width: 640px) {
-      .flow-hero { padding: 116px 0 80px; }
+      .flow-hero { padding: 132px 0 80px; }
       .flow-header { margin-bottom: 48px; }
       .flow-roots { gap: 28px; }
       .flow-node { width: 108px; height: 108px; }
       .flow-node__icon-wrap { width: 40px; height: 40px; }
       .flow-panels { margin-top: 40px; }
       .flow-panel { padding: 26px 22px; }
-      .flow-panel .btn { display: flex; justify-content: center; width: 100%; }
-      .flow-chips { gap: 8px; }
-      .flow-chip { padding: 8px 14px; font-size: 12.5px; }
-      @keyframes flowPing {
-        0%   { transform: scale(1); opacity: 0.6; }
-        100% { transform: scale(1.15); opacity: 0; }
-      }
-    }
-
-    @media (max-width: 360px) {
-      .flow-roots { gap: 18px; }
-      .flow-node { width: 96px; height: 96px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .flow-node::after, .flow-node__chevron { animation: none !important; }
-      .flow-node, .flow-panel, .flow-vline, .flow-connector-svg path { transition: none !important; }
+      .flow-panel .btn { display: inline-flex; justify-content: center; width: 100%; }
     }
   </style>
 </head>
@@ -235,9 +225,9 @@
     <span class="nav__logo-dot"></span>
   </a>
 
-  <a href="contact.html" class="nav__cta">
+  <a href="contact.html" class="nav__cta btn-eval">
     Solicitar evaluación
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
   </a>
 
   <button class="nav__hamburger" aria-label="Menú">
@@ -269,7 +259,7 @@
   <div class="container">
     <div class="flow-header" data-reveal>
       <div class="t-label">Servicios de ciberseguridad</div>
-      <h1 class="t-display-lg" style="margin-top: 14px; font-family: Arial">Dos formas de<br><em>avanzar.</em></h1>
+      <h1 class="t-display-lg" style="margin-top: 14px">Dos formas de<br><em>avanzar.</em></h1>
       <p class="t-body-xl section-intro" style="margin-top: 16px">SGSI (ISO 27001) o Plan Director de Seguridad. Elige un punto de partida — el resto se revela paso a paso.</p>
       <div class="flow-jumplinks">
         <a href="#gap">Ver Gap Assessment</a>
@@ -281,12 +271,12 @@
       <svg class="flow-connector-svg" id="flowConnectorSvg">
         <defs>
           <linearGradient id="flowGradientGreen" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2d7a4a" stop-opacity="0.85"/>
-            <stop offset="100%" stop-color="#2d7a4a" stop-opacity="0.15"/>
+            <stop offset="0%" stop-color="#46e3a6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#46e3a6" stop-opacity="0.15"/>
           </linearGradient>
           <linearGradient id="flowGradientBlue" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2c5fa3" stop-opacity="0.85"/>
-            <stop offset="100%" stop-color="#2c5fa3" stop-opacity="0.15"/>
+            <stop offset="0%" stop-color="#38d2c6" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#38d2c6" stop-opacity="0.15"/>
           </linearGradient>
         </defs>
         <path id="flowConnectorPath" d=""></path>
@@ -364,12 +354,12 @@
 <!-- ════════════════════════════════════════
      GAP ASSESSMENT
      ════════════════════════════════════════ -->
-<section id="gap" class="section servicio-block" style="background: var(--white)">
+<section id="gap" class="section servicio-block">
   <div class="container">
     <div class="servicio-layout">
       <div class="servicio-info" data-reveal="left">
         <span class="badge badge-coral" style="margin-bottom: 16px">Servicio independiente</span>
-        <h2 class="t-display-md" style="margin-top: 14px; font-family: Arial">Gap Assessment</h2>
+        <h2 class="t-display-md" style="margin-top: 14px">Gap Assessment</h2>
         <p class="t-body-lg" style="margin-top: 14px">Diagnóstico completo de tu situación actual frente a ISO 27001. El primer paso si todavía no sabes por dónde empezar — y un servicio que puedes contratar de forma totalmente independiente del SGSI completo.</p>
         <div class="servicio-meta">
           <div class="servicio-meta-item"><div class="t-label-muted">Duración</div><strong>2–3 semanas</strong></div>
@@ -424,12 +414,12 @@
 <!-- ════════════════════════════════════════
      MANTENIMIENTO
      ════════════════════════════════════════ -->
-<section id="mantenimiento" class="section servicio-block" style="background: var(--paper)">
+<section id="mantenimiento" class="section servicio-block">
   <div class="container">
     <div class="servicio-layout">
       <div class="servicio-info" data-reveal="left">
         <span class="badge badge-green" style="margin-bottom: 16px">Servicio independiente</span>
-        <h2 class="t-display-md" style="margin-top: 14px; font-family: Arial">Mantenimiento y<br>mejora continua</h2>
+        <h2 class="t-display-md" style="margin-top: 14px">Mantenimiento y<br>mejora continua</h2>
         <p class="t-body-lg" style="margin-top: 14px">Para organizaciones que ya tienen un SGSI operativo —implantado por nosotros o no— y quieren mantenerlo vivo, actualizado y preparado para auditorías de renovación sin dedicar un recurso interno a tiempo completo.</p>
         <div class="servicio-meta">
           <div class="servicio-meta-item"><div class="t-label-muted">Duración</div><strong>Servicio continuo</strong></div>
@@ -484,11 +474,11 @@
 <!-- ════════════════════════════════════════
      COMPARATIVA
      ════════════════════════════════════════ -->
-<section class="section" style="background: var(--white)">
+<section class="section">
   <div class="container">
     <div class="section-header" data-reveal>
       <div class="t-label">Comparativa rápida</div>
-      <h2 class="t-display-md" style="margin-top: 14px; font-family: Arial">¿Cuál es tu punto<br>de <em>partida?</em></h2>
+      <h2 class="t-display-md" style="margin-top: 14px">¿Cuál es tu punto<br>de <em>partida?</em></h2>
     </div>
 
     <div class="compare-table-wrap" data-reveal data-delay="150">
@@ -511,12 +501,16 @@
 <section id="cta-final" class="section">
   <div class="cta-orb-1"></div>
   <div class="cta-orb-2"></div>
+  <img class="cta-aurora" src="assets/hero-aurora.jpg" alt="">
   <div class="container" style="text-align: center; max-width: 700px">
     <div class="t-label" style="color: rgba(255,255,255,0.35); margin-bottom: 20px" data-reveal>¿No sabes cuál elegir?</div>
     <h2 data-reveal data-delay="100">Empieza con una<br><em>evaluación inicial.</em></h2>
     <p data-reveal data-delay="200">Sin compromisos. Te explicamos qué servicio encaja mejor con tu situación y por qué.</p>
     <div data-reveal data-delay="300">
-      <a href="contact.html" class="btn btn-white btn--lg">Solicitar evaluación gratuita</a>
+      <a href="contact.html" class="btn btn-white btn--lg btn-eval">
+        Solicitar evaluación gratuita
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+      </a>
       <div class="cta-subtext">O escribe directamente a <a href="mailto:hola@testa.es">hola@testa.es</a></div>
     </div>
   </div>

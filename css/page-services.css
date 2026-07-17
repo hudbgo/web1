@@ -1,96 +1,99 @@
 /* ─────────────────────────────────────────────────────────
-   TESTA — Page: Services
+   M&Co — Servicios · Dark Aurora
    ───────────────────────────────────────────────────────── */
 
-/* ═══════════════════════════════
-   HERO
-   ═══════════════════════════════ */
 .services-hero {
-  padding: 160px 0 64px;
-  background: var(--paper);
+  padding: 170px 0 90px;
+  position: relative;
+  overflow: hidden;
 }
+
 .services-quicknav {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
-  margin-top: 36px;
+  flex-wrap: wrap;
+  margin-top: 26px;
 }
 .services-quicknav .chip {
   text-decoration: none;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition: all 0.25s var(--ease);
 }
 .services-quicknav .chip:hover {
-  border-color: var(--coral-mid);
-  color: var(--coral-dark);
-  background: var(--coral-light);
+  border-color: rgba(70,227,166,0.4);
+  color: var(--green-soft);
+  transform: translateY(-1px);
 }
 
-/* ═══════════════════════════════
-   SERVICE BLOCKS (Gap / Mantenimiento)
-   ═══════════════════════════════ */
+/* ── Bloques de servicio ── */
+.servicio-block { overflow: hidden; }
 .servicio-layout {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 48px;
+  grid-template-columns: 380px 1fr;
+  gap: 72px;
   align-items: start;
 }
 .servicio-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  margin: 24px 0 28px;
+  gap: 36px;
+  margin: 26px 0 30px;
+  padding: 20px 24px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
 }
 .servicio-meta-item strong {
   display: block;
-  margin-top: 4px;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
-  color: var(--ink);
-}
-.servicio-detail .accordion-body__grid {
-  margin-top: 0;
+  color: var(--text);
+  margin-top: 5px;
 }
 
-/* ═══════════════════════════════
-   COMPARISON TABLE
-   ═══════════════════════════════ */
+.servicio-detail .accordion-body__grid {
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 4px;
+}
+
+/* ── Tabla comparativa ── */
 .compare-table-wrap {
-  overflow-x: auto;
   border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 .compare-table {
-  border: 0.5px solid var(--border);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  background: var(--white);
-  min-width: 620px;
+  width: 100%;
 }
 .compare-row {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1.8fr;
-  gap: 16px;
-  padding: 16px 24px;
-  border-bottom: 0.5px solid var(--border);
-  align-items: center;
+  grid-template-columns: 1.2fr 0.8fr 1.6fr;
+  gap: 20px;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
 }
+.compare-row:not(.compare-row--head):hover { background: rgba(255,255,255,0.03); }
 .compare-row:last-child { border-bottom: none; }
 .compare-row--head {
-  background: var(--paper-2);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--text-4);
+  background: rgba(255,255,255,0.03);
 }
-.compare-row:not(.compare-row--head) div { font-size: 14px; color: var(--ink-2); }
-.compare-row:not(.compare-row--head) div:first-child { font-weight: 500; color: var(--ink); }
+.compare-row:not(.compare-row--head) div { font-size: 14px; color: var(--text-3); }
+.compare-row:not(.compare-row--head) div:first-child { font-weight: 500; color: var(--text); }
 
-/* ═══════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════ */
+/* ── Responsive ── */
 @media (max-width: 900px) {
-  .servicio-layout { grid-template-columns: 1fr; gap: 32px; }
+  .servicio-layout { grid-template-columns: 1fr; gap: 40px; }
+  .servicio-detail .accordion-body__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-  .services-hero { padding: 120px 0 48px; }
+  .compare-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 20px; }
+  .compare-row--head { display: none; }
+  .servicio-meta { flex-direction: column; gap: 16px; }
 }

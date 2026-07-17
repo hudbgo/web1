@@ -1,195 +1,155 @@
 /* ─────────────────────────────────────────────────────────
-   TESTA — Animations
+   M&Co — Animations · Dark Aurora
    ───────────────────────────────────────────────────────── */
 
-/* ═══════════════════════════════
-   Entrance states
-   ═══════════════════════════════ */
+/* ── Scroll reveal ── */
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
-  transition:
-    opacity 0.7s var(--ease-out),
-    transform 0.7s var(--ease-out);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
-[data-reveal="fade"] {
-  transform: translateY(0);
-}
-[data-reveal="left"] {
-  transform: translateX(-32px);
-}
-[data-reveal="right"] {
-  transform: translateX(32px);
-}
-[data-reveal="scale"] {
-  transform: scale(0.94);
-}
+[data-reveal="left"]  { transform: translateX(-32px); }
+[data-reveal="right"] { transform: translateX(32px); }
 [data-reveal].revealed {
   opacity: 1;
-  transform: translateY(0) translateX(0) scale(1);
+  transform: translate(0, 0);
 }
-
-/* Stagger delays */
 [data-delay="100"] { transition-delay: 0.1s; }
 [data-delay="150"] { transition-delay: 0.15s; }
 [data-delay="200"] { transition-delay: 0.2s; }
 [data-delay="300"] { transition-delay: 0.3s; }
-[data-delay="400"] { transition-delay: 0.4s; }
-[data-delay="500"] { transition-delay: 0.5s; }
-[data-delay="600"] { transition-delay: 0.6s; }
-[data-delay="700"] { transition-delay: 0.7s; }
-[data-delay="800"] { transition-delay: 0.8s; }
 
-/* ═══════════════════════════════
-   Page load hero animation
-   ═══════════════════════════════ */
-.hero-animate-1 {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroEnter 0.8s var(--ease-out) 0.1s forwards;
-}
-.hero-animate-2 {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroEnter 0.8s var(--ease-out) 0.25s forwards;
-}
-.hero-animate-3 {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroEnter 0.8s var(--ease-out) 0.4s forwards;
-}
-.hero-animate-4 {
-  opacity: 0;
-  transform: translateY(16px);
-  animation: heroEnter 0.7s var(--ease-out) 0.55s forwards;
-}
-.hero-animate-5 {
-  opacity: 0;
-  animation: heroEnter 0.7s var(--ease-out) 0.9s forwards;
-}
+/* ── Entrada del hero ── */
+.hero-animate-1 { opacity: 0; animation: heroEnter 0.8s var(--ease-out) 0.15s forwards; }
+.hero-animate-2 { opacity: 0; animation: heroEnter 0.9s var(--ease-out) 0.3s forwards; }
+.hero-animate-3 { opacity: 0; animation: heroEnter 0.9s var(--ease-out) 0.45s forwards; }
+.hero-animate-4 { opacity: 0; animation: heroEnter 0.9s var(--ease-out) 0.6s forwards; }
+.hero-animate-5 { opacity: 0; animation: heroEnter 0.9s var(--ease-out) 0.8s forwards; }
 
 @keyframes heroEnter {
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ═══════════════════════════════
-   Floating metrics cards
-   ═══════════════════════════════ */
+/* ── Flotación suave ── */
 .float-1 { animation: floatA 6s ease-in-out infinite; }
 .float-2 { animation: floatB 7s ease-in-out 1s infinite; }
 .float-3 { animation: floatA 5.5s ease-in-out 2s infinite; }
 
 @keyframes floatA {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
 }
 @keyframes floatB {
-  0%, 100% { transform: translateY(-4px); }
-  50%       { transform: translateY(6px); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
 }
 
-/* ═══════════════════════════════
-   Gradient orbs animation
-   ═══════════════════════════════ */
+/* ── Orbes: resplandores aurora ── */
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   pointer-events: none;
-  will-change: transform;
 }
 .orb-1 {
-  width: 640px; height: 640px;
-  background: rgba(196, 218, 242, 0.5);
-  top: -200px; right: -100px;
+  width: 520px; height: 420px;
+  left: -140px; bottom: -180px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 65%);
   animation: orbDrift1 18s ease-in-out infinite;
 }
 .orb-2 {
-  width: 420px; height: 420px;
-  background: rgba(224,92,46,0.07);
-  bottom: 0; left: -100px;
-  animation: orbDrift2 14s ease-in-out 3s infinite;
+  width: 520px; height: 420px;
+  right: -140px; bottom: -180px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04), transparent 65%);
+  animation: orbDrift2 22s ease-in-out infinite;
 }
 .orb-3 {
-  width: 300px; height: 300px;
-  background: rgba(196,218,242,0.35);
-  bottom: 100px; right: 20%;
-  animation: orbDrift1 20s ease-in-out 6s infinite;
+  width: 460px; height: 380px;
+  left: 50%; top: -160px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255,255,255,0.035), transparent 65%);
 }
-
 @keyframes orbDrift1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(40px, 30px) scale(1.05); }
-  66%       { transform: translate(-20px, 50px) scale(0.96); }
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(36px, -24px); }
 }
 @keyframes orbDrift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(30px, -40px) scale(1.08); }
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-36px, -18px); }
 }
 
-/* ═══════════════════════════════
-   Horizontal ticker
-   ═══════════════════════════════ */
+/* ── Esferas de cristal del hero ── */
+@keyframes orbBob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+/* ── Ticker ── */
 .ticker-wrap {
   overflow: hidden;
-  border-top: 0.5px solid var(--border);
-  border-bottom: 0.5px solid var(--border);
-  padding: 14px 0;
-  background: var(--paper-2);
-  white-space: nowrap;
+  display: flex;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
 }
 .ticker-track {
-  display: inline-flex;
-  gap: 0;
-  animation: ticker 28s linear infinite;
+  display: flex;
+  flex-shrink: 0;
+  animation: ticker 32s linear infinite;
 }
 .ticker-track:hover { animation-play-state: paused; }
 .ticker-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 0 24px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  gap: 12px;
+  padding: 16px 28px;
+  font-size: 13px;
+  color: var(--text-3);
+  white-space: nowrap;
 }
 .ticker-dot {
-  width: 4px; height: 4px;
+  width: 5px; height: 5px;
   border-radius: 50%;
-  background: var(--coral);
-  flex-shrink: 0;
+  background: var(--text-4);
 }
 @keyframes ticker {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-100%); }
 }
 
-/* ═══════════════════════════════
-   Hover link arrow
-   ═══════════════════════════════ */
+/* ── Link flecha ── */
 .link-arrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--text-2);
   text-decoration: none;
-  transition: gap 0.2s var(--ease-spring);
+  transition: gap 0.25s var(--ease), color 0.2s;
 }
-.link-arrow:hover { gap: 10px; }
+.link-arrow:hover { gap: 11px; color: var(--text); }
 .link-arrow::after { content: '→'; }
 
-/* ═══════════════════════════════
-   Page transitions
-   ═══════════════════════════════ */
+/* ── Entrada de página ── */
 .page-enter {
-  opacity: 0;
-  animation: pageIn 0.5s var(--ease-out) forwards;
+  animation: pageIn 0.7s var(--ease-out);
 }
 @keyframes pageIn {
-  to { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
+/* ── Movimiento reducido ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; }
+  .hero-animate-1, .hero-animate-2, .hero-animate-3,
+  .hero-animate-4, .hero-animate-5 { opacity: 1; }
+  html { scroll-behavior: auto; }
+}
