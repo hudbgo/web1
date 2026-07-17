@@ -3,7 +3,7 @@
 ## Estructura del proyecto
 
 ```
-testa/
+millanandcompany/
 ├── index.html              ← Página principal (landing page completa)
 ├── css/
 │   ├── tokens.css          ← Variables de diseño (colores, tipografía, espaciado)
@@ -51,10 +51,10 @@ En `css/tokens.css` cambia las URLs de Google Fonts y las variables:
 Todos los textos están directamente en `index.html`. Busca el texto que quieras cambiar y edítalo.
 
 ### Cambiar email de contacto
-Busca `hola@testa.es` en `index.html` y reemplázalo por tu dirección real.
+Busca `hola@millanandcompany.com` en `index.html` y reemplázalo por tu dirección real.
 
 ### Cambiar nombre
-Busca `Testa` en `index.html` y reemplázalo por tu nombre o marca.
+Busca `millanandcompany` en `index.html` y reemplázalo por tu nombre o marca.
 
 ## Secciones incluidas
 
